@@ -1,0 +1,4 @@
+rm: cannot remove 'omp_gol': No such file or directory
+make: *** [clean] Error 1
+make: Warning: File 'Game_Of_Life.c' has modification time 419 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
