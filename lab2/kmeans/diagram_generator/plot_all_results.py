@@ -19,28 +19,6 @@ def find_result_files(results_root: str) -> List[str]:
         files.extend(glob.glob(p, recursive=True))
     files = sorted(files)
     return files
-import os
-import glob
-import sys
-from collections import defaultdict, OrderedDict
-from typing import List
-
-HERE = os.path.dirname(__file__)
-sys.path.insert(0, HERE)
-
-from diagram_gen import parse_results
-from matplotlib.ticker import FuncFormatter
-
-import matplotlib.pyplot as plt
-
-
-def find_result_files(results_root: str) -> List[str]:
-    patterns = [os.path.join(results_root, "**", "run_*.out"), os.path.join(results_root, "**", "run_*.err")]
-    files = []
-    for p in patterns:
-        files.extend(glob.glob(p, recursive=True))
-    files = sorted(files)
-    return files
 
 
 def label_for_path(filepath: str, results_root: str) -> str:
@@ -57,6 +35,7 @@ def label_for_path(filepath: str, results_root: str) -> str:
 def aggregate_runs(files: List[str], results_root: str):
     data = defaultdict(dict)
     raw_entries = defaultdict(list)
+    metadata = {}  # Store dataset metadata per label
     for f in files:
         try:
             entries = parse_results(f)
@@ -76,16 +55,21 @@ def aggregate_runs(files: List[str], results_root: str):
             else:
                 data[label][t] = time
             raw_entries[label].append((t, time))
-    return data, raw_entries
+            # Store metadata (same for all runs of the same label)
+            if label not in metadata:
+                metadata[label] = {
+                    'dataset_size_MB': e.get('dataset_size_MB'),
+                    'numCoords': e.get('numCoords'),
+                    'numClusters': e.get('numClusters'),
+                    'numObjs': e.get('numObjs')
+                }
+    return data, raw_entries, metadata
 
 
-def plot_per_implementation(data, out_dir: str):
+def plot_per_implementation(data, out_dir: str, metadata: dict):
     os.makedirs(out_dir, exist_ok=True)
     created = []
     canonical = [1, 2, 4, 8, 16, 32, 64]
-
-    def int_formatter(x, pos):
-        return str(int(round(x))) if abs(x - round(x)) < 1e-6 else str(x)
 
     for label, thread_map in data.items():
         if not thread_map:
@@ -108,34 +92,48 @@ def plot_per_implementation(data, out_dir: str):
 
         safe_label = label.replace("/", "_").replace(" ", "_")
 
-        # Execution time
+        # Create x positions with equal spacing
+        x_positions = list(range(len(threads)))
+        x_labels = [str(t) for t in threads]
+
+        # Get metadata for this label
+        meta = metadata.get(label, {})
+        config_text = ""
+        if meta.get('dataset_size_MB') is not None:
+            config_text = f"Dataset: {meta['dataset_size_MB']:.2f} MB"
+        if meta.get('numCoords') is not None:
+            config_text += f"  |  Coordinates: {meta['numCoords']}"
+        if meta.get('numClusters') is not None:
+            config_text += f"  |  Clusters: {meta['numClusters']}"
+
+        # Execution time bar plot
         plt.figure(figsize=(8, 4.5))
-        plt.plot(threads, times, marker="o", linewidth=2)
+        plt.bar(x_positions, times, color='red', edgecolor='black', width=0.6)
         plt.xlabel("Number of threads")
         plt.ylabel("Per-loop time (s)")
         plt.title(f"Execution time — {label}")
-        plt.grid(True, linestyle=':', alpha=0.6)
-        plt.xscale('log', base=2)
-        plt.xticks(canonical)
-        plt.xlim(1, 64)
-        ax = plt.gca()
-        ax.xaxis.set_major_formatter(FuncFormatter(int_formatter))
+        plt.grid(axis='y', linestyle=':', alpha=0.6)
+        plt.xticks(x_positions, x_labels)
+        # Add configuration text below the plot
+        if config_text:
+            plt.subplots_adjust(bottom=0.15)
+            plt.figtext(0.5, 0.02, config_text, ha='center', fontsize=9, style='italic')
         time_file = os.path.join(out_dir, f"time_{safe_label}.png")
         plt.savefig(time_file, bbox_inches="tight")
         plt.close()
 
-        # Speedup
+        # Speedup bar plot
         plt.figure(figsize=(8, 4.5))
-        plt.plot(threads, speedups, marker="o", linewidth=2)
+        plt.bar(x_positions, speedups, color='lightblue', edgecolor='black', width=0.6)
         plt.xlabel("Number of threads")
         plt.ylabel(f"Speedup (baseline: {baseline_thread} thread)")
         plt.title(f"Speedup — {label}")
-        plt.grid(True, linestyle=':', alpha=0.6)
-        plt.xscale('log', base=2)
-        plt.xticks(canonical)
-        plt.xlim(1, 64)
-        ax = plt.gca()
-        ax.xaxis.set_major_formatter(FuncFormatter(int_formatter))
+        plt.grid(axis='y', linestyle=':', alpha=0.6)
+        plt.xticks(x_positions, x_labels)
+        # Add configuration text below the plot
+        if config_text:
+            plt.subplots_adjust(bottom=0.15)
+            plt.figtext(0.5, 0.02, config_text, ha='center', fontsize=9, style='italic')
         speed_file = os.path.join(out_dir, f"speedup_{safe_label}.png")
         plt.savefig(speed_file, bbox_inches="tight")
         plt.close()
@@ -144,58 +142,92 @@ def plot_per_implementation(data, out_dir: str):
     return created
 
 
-def plot_combined(data, out_dir: str):
+def plot_combined(data, out_dir: str, metadata: dict):
     os.makedirs(out_dir, exist_ok=True)
     canonical = [1, 2, 4, 8, 16, 32, 64]
+    x_positions = list(range(len(canonical)))
+    x_labels = [str(t) for t in canonical]
 
-    def int_formatter(x, pos):
-        return str(int(round(x))) if abs(x - round(x)) < 1e-6 else str(x)
+    # Get configuration text (assume all runs have same dataset config)
+    config_text = ""
+    if metadata:
+        first_meta = next(iter(metadata.values()))
+        if first_meta.get('dataset_size_MB') is not None:
+            config_text = f"Dataset: {first_meta['dataset_size_MB']:.2f} MB"
+        if first_meta.get('numCoords') is not None:
+            config_text += f"  |  Coordinates: {first_meta['numCoords']}"
+        if first_meta.get('numClusters') is not None:
+            config_text += f"  |  Clusters: {first_meta['numClusters']}"
 
+    # Combined execution time bar plot
     plt.figure(figsize=(12, 6))
-    for label, thread_map in data.items():
+    bar_width = 0.8 / len(data)  # Divide bar width by number of implementations
+    colors = plt.cm.tab10(range(len(data)))  # Get distinct colors
+    
+    for idx, (label, thread_map) in enumerate(data.items()):
         if not thread_map:
             continue
         ordered = OrderedDict(sorted(thread_map.items()))
-        threads = [t for t in canonical if t in ordered]
-        times = [ordered[t] for t in threads]
-        plt.plot(threads, times, marker="o", linewidth=1.5, markersize=6, label=label)
+        # Get times for canonical thread counts that exist in the data
+        times = []
+        x_pos = []
+        for i, t in enumerate(canonical):
+            if t in ordered:
+                times.append(ordered[t])
+                x_pos.append(i + idx * bar_width)
+        
+        plt.bar(x_pos, times, width=bar_width, label=label, 
+                edgecolor='black', linewidth=0.5, color=colors[idx])
+    
     plt.xlabel("Number of threads")
     plt.ylabel("Per-loop time (s)")
     plt.title("Execution time — all implementations")
-    plt.grid(True, linestyle=':', alpha=0.6)
-    plt.xscale('log', base=2)
-    plt.xticks(canonical)
-    plt.xlim(1, 64)
-    ax = plt.gca()
-    ax.xaxis.set_major_formatter(FuncFormatter(int_formatter))
+    plt.grid(axis='y', linestyle=':', alpha=0.6)
+    plt.xticks([i + bar_width * (len(data) - 1) / 2 for i in x_positions], x_labels)
     plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
+    # Add configuration text below the plot
+    if config_text:
+        plt.subplots_adjust(bottom=0.12)
+        plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
     combined_time = os.path.join(out_dir, "combined_time.png")
     plt.savefig(combined_time, bbox_inches="tight")
     plt.close()
 
+    # Combined speedup bar plot
     plt.figure(figsize=(12, 6))
-    for label, thread_map in data.items():
+    
+    for idx, (label, thread_map) in enumerate(data.items()):
         if not thread_map:
             continue
         ordered = OrderedDict(sorted(thread_map.items()))
-        threads = [t for t in canonical if t in ordered]
-        times = [ordered[t] for t in threads]
+        
+        # Get baseline
         if 1 in ordered:
             baseline = ordered[1]
         else:
-            baseline = times[0]
-        speedups = [baseline / t for t in times]
-        plt.plot(threads, speedups, marker="o", linewidth=1.5, markersize=6, label=label)
+            baseline = list(ordered.values())[0]
+        
+        # Get speedups for canonical thread counts that exist in the data
+        speedups = []
+        x_pos = []
+        for i, t in enumerate(canonical):
+            if t in ordered:
+                speedups.append(baseline / ordered[t])
+                x_pos.append(i + idx * bar_width)
+        
+        plt.bar(x_pos, speedups, width=bar_width, label=label,
+                edgecolor='black', linewidth=0.5, color=colors[idx])
+    
     plt.xlabel("Number of threads")
     plt.ylabel("Speedup")
     plt.title("Speedup — all implementations")
-    plt.grid(True, linestyle=':', alpha=0.6)
-    plt.xscale('log', base=2)
-    plt.xticks(canonical)
-    plt.xlim(1, 64)
-    ax = plt.gca()
-    ax.xaxis.set_major_formatter(FuncFormatter(int_formatter))
+    plt.grid(axis='y', linestyle=':', alpha=0.6)
+    plt.xticks([i + bar_width * (len(data) - 1) / 2 for i in x_positions], x_labels)
     plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
+    # Add configuration text below the plot
+    if config_text:
+        plt.subplots_adjust(bottom=0.12)
+        plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
     combined_speed = os.path.join(out_dir, "combined_speedup.png")
     plt.savefig(combined_speed, bbox_inches="tight")
     plt.close()
@@ -210,10 +242,10 @@ def main():
         print("No result files found under", results_root)
         return
     print(f"Found {len(files)} result files")
-    data, _ = aggregate_runs(files, results_root)
+    data, _, metadata = aggregate_runs(files, results_root)
     out_dir = os.path.join(HERE, "..", "diagrams")
-    created = plot_per_implementation(data, out_dir)
-    created += plot_combined(data, out_dir)
+    created = plot_per_implementation(data, out_dir, metadata)
+    created += plot_combined(data, out_dir, metadata)
     print("Created plots:")
     for c in created:
         print(" -", c)
