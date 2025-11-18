@@ -145,94 +145,115 @@ def plot_per_implementation(data, out_dir: str, metadata: dict):
 def plot_combined(data, out_dir: str, metadata: dict):
     os.makedirs(out_dir, exist_ok=True)
     canonical = [1, 2, 4, 8, 16, 32, 64]
-    x_positions = list(range(len(canonical)))
-    x_labels = [str(t) for t in canonical]
-
-    # Get configuration text (assume all runs have same dataset config)
-    config_text = ""
-    if metadata:
-        first_meta = next(iter(metadata.values()))
-        if first_meta.get('dataset_size_MB') is not None:
-            config_text = f"Dataset: {first_meta['dataset_size_MB']:.2f} MB"
-        if first_meta.get('numCoords') is not None:
-            config_text += f"  |  Coordinates: {first_meta['numCoords']}"
-        if first_meta.get('numClusters') is not None:
-            config_text += f"  |  Clusters: {first_meta['numClusters']}"
-
-    # Combined execution time bar plot
-    plt.figure(figsize=(12, 6))
-    bar_width = 0.8 / len(data)  # Divide bar width by number of implementations
-    colors = plt.cm.tab10(range(len(data)))  # Get distinct colors
+    created = []
     
-    for idx, (label, thread_map) in enumerate(data.items()):
+    # Group implementations by their dataset configuration
+    config_groups = defaultdict(list)
+    for label, thread_map in data.items():
         if not thread_map:
             continue
-        ordered = OrderedDict(sorted(thread_map.items()))
-        # Get times for canonical thread counts that exist in the data
-        times = []
-        x_pos = []
-        for i, t in enumerate(canonical):
-            if t in ordered:
-                times.append(ordered[t])
-                x_pos.append(i + idx * bar_width)
-        
-        plt.bar(x_pos, times, width=bar_width, label=label, 
-                edgecolor='black', linewidth=0.5, color=colors[idx])
+        meta = metadata.get(label, {})
+        # Create a config key from dataset parameters
+        config_key = (
+            meta.get('dataset_size_MB'),
+            meta.get('numCoords'),
+            meta.get('numClusters')
+        )
+        config_groups[config_key].append(label)
     
-    plt.xlabel("Number of threads")
-    plt.ylabel("Per-loop time (s)")
-    plt.title("Execution time — all implementations")
-    plt.grid(axis='y', linestyle=':', alpha=0.6)
-    plt.xticks([i + bar_width * (len(data) - 1) / 2 for i in x_positions], x_labels)
-    plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
-    # Add configuration text below the plot
-    if config_text:
-        plt.subplots_adjust(bottom=0.12)
-        plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
-    combined_time = os.path.join(out_dir, "combined_time.png")
-    plt.savefig(combined_time, bbox_inches="tight")
-    plt.close()
-
-    # Combined speedup bar plot
-    plt.figure(figsize=(12, 6))
-    
-    for idx, (label, thread_map) in enumerate(data.items()):
-        if not thread_map:
+    # Create combined plots for each unique configuration
+    for config_key, labels in config_groups.items():
+        if len(labels) < 2:  # Skip if only one implementation with this config
             continue
-        ordered = OrderedDict(sorted(thread_map.items()))
+            
+        dataset_size, num_coords, num_clusters = config_key
         
-        # Get baseline
-        if 1 in ordered:
-            baseline = ordered[1]
-        else:
-            baseline = list(ordered.values())[0]
+        # Create config text and safe filename
+        config_text = ""
+        config_suffix = ""
+        if dataset_size is not None:
+            config_text = f"Dataset: {dataset_size:.2f} MB"
+            config_suffix += f"_{int(dataset_size)}MB"
+        if num_coords is not None:
+            config_text += f"  |  Coordinates: {num_coords}"
+            config_suffix += f"_{num_coords}coords"
+        if num_clusters is not None:
+            config_text += f"  |  Clusters: {num_clusters}"
+            config_suffix += f"_{num_clusters}clusters"
         
-        # Get speedups for canonical thread counts that exist in the data
-        speedups = []
-        x_pos = []
-        for i, t in enumerate(canonical):
-            if t in ordered:
-                speedups.append(baseline / ordered[t])
-                x_pos.append(i + idx * bar_width)
+        x_positions = list(range(len(canonical)))
+        x_labels = [str(t) for t in canonical]
         
-        plt.bar(x_pos, speedups, width=bar_width, label=label,
-                edgecolor='black', linewidth=0.5, color=colors[idx])
+        # Combined execution time bar plot
+        plt.figure(figsize=(12, 6))
+        bar_width = 0.8 / len(labels)
+        colors = plt.cm.tab10(range(len(labels)))
+        
+        for idx, label in enumerate(labels):
+            thread_map = data[label]
+            ordered = OrderedDict(sorted(thread_map.items()))
+            times = []
+            x_pos = []
+            for i, t in enumerate(canonical):
+                if t in ordered:
+                    times.append(ordered[t])
+                    x_pos.append(i + idx * bar_width)
+            
+            plt.bar(x_pos, times, width=bar_width, label=label, 
+                    edgecolor='black', linewidth=0.5, color=colors[idx])
+        
+        plt.xlabel("Number of threads")
+        plt.ylabel("Per-loop time (s)")
+        plt.title("Execution time — all implementations")
+        plt.grid(axis='y', linestyle=':', alpha=0.6)
+        plt.xticks([i + bar_width * (len(labels) - 1) / 2 for i in x_positions], x_labels)
+        plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
+        if config_text:
+            plt.subplots_adjust(bottom=0.12)
+            plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
+        combined_time = os.path.join(out_dir, f"combined_time{config_suffix}.png")
+        plt.savefig(combined_time, bbox_inches="tight")
+        plt.close()
+        created.append(combined_time)
+        
+        # Combined speedup bar plot
+        plt.figure(figsize=(12, 6))
+        
+        for idx, label in enumerate(labels):
+            thread_map = data[label]
+            ordered = OrderedDict(sorted(thread_map.items()))
+            
+            # Get baseline
+            if 1 in ordered:
+                baseline = ordered[1]
+            else:
+                baseline = list(ordered.values())[0]
+            
+            speedups = []
+            x_pos = []
+            for i, t in enumerate(canonical):
+                if t in ordered:
+                    speedups.append(baseline / ordered[t])
+                    x_pos.append(i + idx * bar_width)
+            
+            plt.bar(x_pos, speedups, width=bar_width, label=label,
+                    edgecolor='black', linewidth=0.5, color=colors[idx])
+        
+        plt.xlabel("Number of threads")
+        plt.ylabel("Speedup")
+        plt.title("Speedup — all implementations")
+        plt.grid(axis='y', linestyle=':', alpha=0.6)
+        plt.xticks([i + bar_width * (len(labels) - 1) / 2 for i in x_positions], x_labels)
+        plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
+        if config_text:
+            plt.subplots_adjust(bottom=0.12)
+            plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
+        combined_speed = os.path.join(out_dir, f"combined_speedup{config_suffix}.png")
+        plt.savefig(combined_speed, bbox_inches="tight")
+        plt.close()
+        created.append(combined_speed)
     
-    plt.xlabel("Number of threads")
-    plt.ylabel("Speedup")
-    plt.title("Speedup — all implementations")
-    plt.grid(axis='y', linestyle=':', alpha=0.6)
-    plt.xticks([i + bar_width * (len(data) - 1) / 2 for i in x_positions], x_labels)
-    plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
-    # Add configuration text below the plot
-    if config_text:
-        plt.subplots_adjust(bottom=0.12)
-        plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
-    combined_speed = os.path.join(out_dir, "combined_speedup.png")
-    plt.savefig(combined_speed, bbox_inches="tight")
-    plt.close()
-
-    return [combined_time, combined_speed]
+    return created
 
 
 def main():
