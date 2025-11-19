@@ -36,6 +36,8 @@ def aggregate_runs(files: List[str], results_root: str):
     data = defaultdict(dict)
     raw_entries = defaultdict(list)
     metadata = {}  # Store dataset metadata per label
+    sequential_data = {}  # Store sequential times per config
+    
     for f in files:
         try:
             entries = parse_results(f)
@@ -45,9 +47,33 @@ def aggregate_runs(files: List[str], results_root: str):
         if not entries:
             continue
         label = label_for_path(f, results_root)
+        
+        # Check if this is a sequential run
+        is_sequential = 'sequential' in label.lower()
+        
         for e in entries:
             t = e.get("numThreads")
             time = e.get("per_loop_time_s")
+            
+            # Create config key
+            config_key = (
+                e.get('dataset_size_MB'),
+                e.get('numCoords'),
+                e.get('numClusters')
+            )
+            
+            # Handle sequential runs (no numThreads)
+            if is_sequential and time is not None and t is None:
+                sequential_data[config_key] = time
+                if label not in metadata:
+                    metadata[label] = {
+                        'dataset_size_MB': e.get('dataset_size_MB'),
+                        'numCoords': e.get('numCoords'),
+                        'numClusters': e.get('numClusters'),
+                        'numObjs': e.get('numObjs')
+                    }
+                continue
+            
             if t is None or time is None:
                 continue
             if t in data[label]:
@@ -63,10 +89,10 @@ def aggregate_runs(files: List[str], results_root: str):
                     'numClusters': e.get('numClusters'),
                     'numObjs': e.get('numObjs')
                 }
-    return data, raw_entries, metadata
+    return data, raw_entries, metadata, sequential_data
 
 
-def plot_per_implementation(data, out_dir: str, metadata: dict):
+def plot_per_implementation(data, out_dir: str, metadata: dict, sequential_data: dict):
     os.makedirs(out_dir, exist_ok=True)
     created = []
     canonical = [1, 2, 4, 8, 16, 32, 64]
@@ -75,19 +101,30 @@ def plot_per_implementation(data, out_dir: str, metadata: dict):
         if not thread_map:
             continue
         ordered = OrderedDict(sorted(thread_map.items()))
-        threads = [t for t in canonical if t in ordered]
-        times = [ordered[t] for t in threads]
+        
+        # Get config key for this label
+        meta = metadata.get(label, {})
+        config_key = (
+            meta.get('dataset_size_MB'),
+            meta.get('numCoords'),
+            meta.get('numClusters')
+        )
+        
+        # Get sequential baseline for this config
+        seq_time = sequential_data.get(config_key)
+        if seq_time is None:
+            print(f"Warning: No sequential baseline found for {label}, skipping...")
+            continue
+        
+        # Build data with sequential as first entry
+        threads = ['seq'] + [t for t in canonical if t in ordered]
+        times = [seq_time] + [ordered[t] for t in canonical if t in ordered]
 
-        if not threads:
+        if len(times) <= 1:  # Only sequential, no parallel data
             continue
 
-        if 1 in ordered:
-            baseline = ordered[1]
-            baseline_thread = 1
-        else:
-            baseline_thread = threads[0]
-            baseline = ordered[baseline_thread]
-
+        # Use sequential time as baseline for speedup
+        baseline = seq_time
         speedups = [baseline / t for t in times]
 
         safe_label = label.replace("/", "_").replace(" ", "_")
@@ -96,8 +133,6 @@ def plot_per_implementation(data, out_dir: str, metadata: dict):
         x_positions = list(range(len(threads)))
         x_labels = [str(t) for t in threads]
 
-        # Get metadata for this label
-        meta = metadata.get(label, {})
         config_text = ""
         if meta.get('dataset_size_MB') is not None:
             config_text = f"Dataset: {meta['dataset_size_MB']:.2f} MB"
@@ -126,7 +161,7 @@ def plot_per_implementation(data, out_dir: str, metadata: dict):
         plt.figure(figsize=(8, 4.5))
         plt.bar(x_positions, speedups, color='lightblue', edgecolor='black', width=0.6)
         plt.xlabel("Number of threads")
-        plt.ylabel(f"Speedup (baseline: {baseline_thread} thread)")
+        plt.ylabel(f"Speedup (baseline: sequential)")
         plt.title(f"Speedup — {label}")
         plt.grid(axis='y', linestyle=':', alpha=0.6)
         plt.xticks(x_positions, x_labels)
@@ -142,7 +177,7 @@ def plot_per_implementation(data, out_dir: str, metadata: dict):
     return created
 
 
-def plot_combined(data, out_dir: str, metadata: dict):
+def plot_combined(data, out_dir: str, metadata: dict, sequential_data: dict):
     os.makedirs(out_dir, exist_ok=True)
     canonical = [1, 2, 4, 8, 16, 32, 64]
     created = []
@@ -165,6 +200,12 @@ def plot_combined(data, out_dir: str, metadata: dict):
     for config_key, labels in config_groups.items():
         if len(labels) < 2:  # Skip if only one implementation with this config
             continue
+        
+        # Get sequential baseline for this config
+        seq_time = sequential_data.get(config_key)
+        if seq_time is None:
+            print(f"Warning: No sequential baseline for config {config_key}, skipping combined plot...")
+            continue
             
         dataset_size, num_coords, num_clusters = config_key
         
@@ -181,8 +222,9 @@ def plot_combined(data, out_dir: str, metadata: dict):
             config_text += f"  |  Clusters: {num_clusters}"
             config_suffix += f"_{num_clusters}clusters"
         
-        x_positions = list(range(len(canonical)))
-        x_labels = [str(t) for t in canonical]
+        # Add 'seq' as first position
+        x_positions = list(range(len(canonical) + 1))
+        x_labels = ['seq'] + [str(t) for t in canonical]
         
         # Combined execution time bar plot
         plt.figure(figsize=(12, 6))
@@ -192,12 +234,13 @@ def plot_combined(data, out_dir: str, metadata: dict):
         for idx, label in enumerate(labels):
             thread_map = data[label]
             ordered = OrderedDict(sorted(thread_map.items()))
-            times = []
-            x_pos = []
+            # Start with sequential time
+            times = [seq_time]
+            x_pos = [0 + idx * bar_width]
             for i, t in enumerate(canonical):
                 if t in ordered:
                     times.append(ordered[t])
-                    x_pos.append(i + idx * bar_width)
+                    x_pos.append((i + 1) + idx * bar_width)
             
             plt.bar(x_pos, times, width=bar_width, label=label, 
                     edgecolor='black', linewidth=0.5, color=colors[idx])
@@ -218,29 +261,25 @@ def plot_combined(data, out_dir: str, metadata: dict):
         
         # Combined speedup bar plot
         plt.figure(figsize=(12, 6))
+        baseline = seq_time
         
         for idx, label in enumerate(labels):
             thread_map = data[label]
             ordered = OrderedDict(sorted(thread_map.items()))
             
-            # Get baseline
-            if 1 in ordered:
-                baseline = ordered[1]
-            else:
-                baseline = list(ordered.values())[0]
-            
-            speedups = []
-            x_pos = []
+            # Start with sequential speedup (1.0)
+            speedups = [baseline / seq_time]
+            x_pos = [0 + idx * bar_width]
             for i, t in enumerate(canonical):
                 if t in ordered:
                     speedups.append(baseline / ordered[t])
-                    x_pos.append(i + idx * bar_width)
+                    x_pos.append((i + 1) + idx * bar_width)
             
             plt.bar(x_pos, speedups, width=bar_width, label=label,
                     edgecolor='black', linewidth=0.5, color=colors[idx])
         
         plt.xlabel("Number of threads")
-        plt.ylabel("Speedup")
+        plt.ylabel("Speedup (baseline: sequential)")
         plt.title("Speedup — all implementations")
         plt.grid(axis='y', linestyle=':', alpha=0.6)
         plt.xticks([i + bar_width * (len(labels) - 1) / 2 for i in x_positions], x_labels)
@@ -263,10 +302,15 @@ def main():
         print("No result files found under", results_root)
         return
     print(f"Found {len(files)} result files")
-    data, _, metadata = aggregate_runs(files, results_root)
+    data, _, metadata, sequential_data = aggregate_runs(files, results_root)
+    
+    print(f"Found {len(sequential_data)} sequential baseline(s):")
+    for config_key, time in sequential_data.items():
+        print(f"  Config {config_key}: {time:.4f}s")
+    
     out_dir = os.path.join(HERE, "..", "diagrams")
-    created = plot_per_implementation(data, out_dir, metadata)
-    created += plot_combined(data, out_dir, metadata)
+    created = plot_per_implementation(data, out_dir, metadata, sequential_data)
+    created += plot_combined(data, out_dir, metadata, sequential_data)
     print("Created plots:")
     for c in created:
         print(" -", c)
