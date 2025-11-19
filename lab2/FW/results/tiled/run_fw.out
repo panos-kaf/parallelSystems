@@ -1,0 +1,75 @@
+-- SIZE: 1024 x 1024 --
+
+serial algorithm
+
+nthreads=1:
+FW_TILED,1024,16,0.7182
+
+nthreads=2:
+FW_TILED,1024,16,0.4824
+
+nthreads=4:
+FW_TILED,1024,16,0.5184
+
+nthreads=8:
+FW_TILED,1024,16,0.7710
+
+nthreads=16:
+FW_TILED,1024,16,0.8373
+
+nthreads=32:
+FW_TILED,1024,16,0.8671
+
+nthreads=64:
+FW_TILED,1024,16,0.9869
+
+-- SIZE: 2048 x 2048 --
+
+serial algorithm
+
+nthreads=1:
+FW_TILED,2048,16,5.4521
+
+nthreads=2:
+FW_TILED,2048,16,3.7659
+
+nthreads=4:
+FW_TILED,2048,16,4.1711
+
+nthreads=8:
+FW_TILED,2048,16,5.2628
+
+nthreads=16:
+FW_TILED,2048,16,5.9290
+
+nthreads=32:
+FW_TILED,2048,16,6.1762
+
+nthreads=64:
+FW_TILED,2048,16,6.6256
+
+-- SIZE: 4096 x 4096 --
+
+serial algorithm
+
+nthreads=1:
+FW_TILED,4096,16,43.2084
+
+nthreads=2:
+FW_TILED,4096,16,30.1041
+
+nthreads=4:
+FW_TILED,4096,16,28.0251
+
+nthreads=8:
+FW_TILED,4096,16,32.8149
+
+nthreads=16:
+FW_TILED,4096,16,34.9281
+
+nthreads=32:
+FW_TILED,4096,16,36.1691
+
+nthreads=64:
+FW_TILED,4096,16,36.8207
+

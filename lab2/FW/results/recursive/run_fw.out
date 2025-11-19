@@ -1,0 +1,78 @@
+-- SIZE: 1024 x 1024 --
+
+serial algorithm
+FW,1024,1.7202
+
+nthreads=1:
+FW_SR, N = 1024, B = 16, Time: 0.9132
+
+nthreads=2:
+FW_SR, N = 1024, B = 16, Time: 0.4879
+
+nthreads=4:
+FW_SR, N = 1024, B = 16, Time: 0.3903
+
+nthreads=8:
+FW_SR, N = 1024, B = 16, Time: 0.3995
+
+nthreads=16:
+FW_SR, N = 1024, B = 16, Time: 0.3954
+
+nthreads=32:
+FW_SR, N = 1024, B = 16, Time: 0.4038
+
+nthreads=64:
+FW_SR, N = 1024, B = 16, Time: 0.4138
+
+-- SIZE: 2048 x 2048 --
+
+serial algorithm
+FW,2048,13.9421
+
+nthreads=1:
+FW_SR, N = 2048, B = 16, Time: 6.7646
+
+nthreads=2:
+FW_SR, N = 2048, B = 16, Time: 3.4566
+
+nthreads=4:
+FW_SR, N = 2048, B = 16, Time: 2.6438
+
+nthreads=8:
+FW_SR, N = 2048, B = 16, Time: 2.6422
+
+nthreads=16:
+FW_SR, N = 2048, B = 16, Time: 2.7719
+
+nthreads=32:
+FW_SR, N = 2048, B = 16, Time: 2.7102
+
+nthreads=64:
+FW_SR, N = 2048, B = 16, Time: 2.6705
+
+-- SIZE: 4096 x 4096 --
+
+serial algorithm
+FW,4096,114.4029
+
+nthreads=1:
+FW_SR, N = 4096, B = 16, Time: 54.0658
+
+nthreads=2:
+FW_SR, N = 4096, B = 16, Time: 27.4479
+
+nthreads=4:
+FW_SR, N = 4096, B = 16, Time: 20.8399
+
+nthreads=8:
+FW_SR, N = 4096, B = 16, Time: 20.7408
+
+nthreads=16:
+FW_SR, N = 4096, B = 16, Time: 20.7785
+
+nthreads=32:
+FW_SR, N = 4096, B = 16, Time: 20.8256
+
+nthreads=64:
+FW_SR, N = 4096, B = 16, Time: 20.7526
+
