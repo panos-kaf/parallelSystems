@@ -1,0 +1,1649 @@
+--- SERIAL ---
+---  SIZE = 1024 - PERCENTS = 100 0 0 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1569.58
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 1024 - PERCENTS = 80 10 10 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 2242.52
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 1024 - PERCENTS = 20 40 40 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 2181.36
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 1024 - PERCENTS = 0 50 50 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 2180.87
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 8192 - PERCENTS = 100 0 0 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 151.81
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 8192 - PERCENTS = 80 10 10 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 70.84
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 8192 - PERCENTS = 20 40 40 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 69.51
+
+-------------------------------------------------------------------------------
+
+---  SIZE = 8192 - PERCENTS = 0 50 50 ---
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 67.88
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1525.42
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 234.22
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1569.05
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 814.99
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 795.60
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 2205.84
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 392.56
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 2055.00
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1146.05
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1073.09
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 2132.60
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 390.60
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1907.29
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1070.47
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1045.24
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 2144.99
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 390.99
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1873.06
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1052.26
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1037.70
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 151.93
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 29.46
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 151.73
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 102.31
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 76.37
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 66.47
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 35.52
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 58.86
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 66.68
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 31.29
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 68.55
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 34.89
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 56.01
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 64.08
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 29.49
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 1 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 69.92
+
+x.fgl
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 36.67
+
+x.lazy
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 57.60
+
+x.nb
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 63.53
+
+x.opt
+MT_CONF=0
+Nthreads: 1  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 28.96
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1444.97
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 309.38
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 3118.09
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1619.58
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 787.37
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1849.07
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 226.69
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1821.59
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1478.67
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 846.38
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1810.01
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 227.98
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1506.21
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1328.57
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 846.90
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1796.34
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 228.33
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1432.09
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1292.08
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 843.87
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 148.18
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 55.24
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 300.32
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 203.82
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 96.90
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 70.23
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 32.61
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 118.78
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 135.45
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 58.49
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 69.39
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 30.11
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 110.58
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 125.66
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 56.54
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 2 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 68.57
+
+x.fgl
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 30.26
+
+x.lazy
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 109.44
+
+x.nb
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 126.88
+
+x.opt
+MT_CONF=0,1
+Nthreads: 2  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 55.33
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1330.31
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 409.80
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 6001.80
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 3116.33
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 821.56
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 753.70
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 312.90
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1388.11
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1396.86
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 647.98
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 873.89
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 317.41
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1284.84
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1295.02
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 668.98
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1073.43
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 321.29
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1256.18
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1274.56
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 673.64
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 143.04
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 100.71
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 578.22
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 392.46
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 134.60
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 63.37
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 50.87
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 222.98
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 267.48
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 110.78
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 62.56
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 49.34
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 209.03
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 238.80
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 104.69
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 4 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 57.27
+
+x.fgl
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 49.58
+
+x.lazy
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 205.37
+
+x.nb
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 233.84
+
+x.opt
+MT_CONF=0,1,2,3
+Nthreads: 4  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 105.57
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1247.29
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 515.85
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 11112.87
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 5744.39
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 727.79
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 322.47
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 473.50
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1777.48
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1940.47
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 815.84
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 300.44
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 481.86
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1712.35
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1823.72
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 866.52
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 301.90
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 482.92
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1686.11
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1786.37
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 868.35
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 132.84
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 127.84
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1071.32
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 725.86
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 134.70
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 53.82
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 87.04
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 329.80
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 354.22
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 160.00
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 44.39
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 83.37
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 323.81
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 336.15
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 158.13
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 8 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 44.32
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 83.31
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 322.19
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 353.18
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7
+Nthreads: 8  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 158.46
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 507.49
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 226.43
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 22207.89
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 10772.04
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 184.43
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 233.50
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 204.68
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1268.80
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1483.48
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 500.41
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 211.02
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 215.32
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1108.48
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1287.56
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 529.88
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 180.64
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 212.80
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1068.74
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1240.85
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 533.87
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 125.37
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 101.27
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 2151.75
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 1451.31
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 103.36
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 46.91
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 48.68
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 494.21
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 520.50
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 231.56
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 37.10
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 46.73
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 486.06
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 528.12
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 235.51
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 16 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 37.48
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 45.82
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 470.82
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 508.97
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+Nthreads: 16  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 236.51
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 483.54
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 143.89
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 44435.87
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 16291.65
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 175.71
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 253.60
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 186.68
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 5320.68
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 6173.76
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 1590.36
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 351.82
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 237.13
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 3705.04
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 4882.02
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 1675.68
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 286.40
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 285.56
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 3351.91
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 4655.34
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 1671.25
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 119.03
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 48.44
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 4292.90
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 2900.97
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 89.33
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 46.95
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 60.12
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 851.75
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 894.24
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 364.00
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 38.74
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 60.01
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 794.46
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 856.41
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 379.95
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 32 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 42.70
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 59.83
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 758.58
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 874.57
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31
+Nthreads: 32  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 372.81
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 549.15
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 179.36
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 82826.30
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 28188.94
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 267.10
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 254.10
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 194.35
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 8766.22
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 8869.67
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 2782.98
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 177.66
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 200.74
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 6547.54
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 8184.28
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 2750.88
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 193.57
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 208.92
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 5806.51
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 7892.22
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 2617.56
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 114.32
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 22.93
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 8240.76
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 5702.09
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 106.72
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 40.58
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 65.66
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 868.65
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 817.78
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 426.53
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 33.41
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 87.36
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 880.68
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 964.06
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 419.76
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 64 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 32.12
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 87.60
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 877.30
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 922.42
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 64  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 417.19
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 1024 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 325.52
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 47.45
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 80694.07
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 43092.69
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 190.25
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 1024 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 103.15
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 19.12
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 3010.95
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 6235.04
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 498.73
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 1024 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 100.54
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 100.09
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 935.62
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 9484.53
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 560.08
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 1024 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 84.78
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 30.79
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 619.83
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 8691.06
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 411.00
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 8192 - PERCENTS = 100 0 0 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 64.14
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec):  7.66
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 8239.80
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 5698.55
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 100/0/0  Throughput(Kops/sec): 59.16
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 8192 - PERCENTS = 80 10 10 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 24.43
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 22.23
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 598.24
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 570.70
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 80/10/10  Throughput(Kops/sec): 252.80
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 8192 - PERCENTS = 20 40 40 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 15.85
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 10.06
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 595.18
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 591.10
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 20/40/40  Throughput(Kops/sec): 256.51
+
+-------------------------------------------------------------------------------
+
+
+--- NTHREADS = 128 - SIZE = 8192 - PERCENTS = 0 50 50 ---
+
+x.cgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 14.04
+
+x.fgl
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec):  3.21
+
+x.lazy
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 594.32
+
+x.nb
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 604.80
+
+x.opt
+MT_CONF=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63
+Nthreads: 128  Runtime(sec): 10  Workload: 0/50/50  Throughput(Kops/sec): 256.23
+
+-------------------------------------------------------------------------------
+
