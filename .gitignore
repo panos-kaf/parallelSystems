@@ -3,3 +3,4 @@
 *_env/
 results_old/
 *.o
+.password
