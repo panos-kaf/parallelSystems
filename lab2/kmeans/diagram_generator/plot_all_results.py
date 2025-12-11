@@ -153,7 +153,7 @@ def plot_per_implementation(data, out_dir: str, metadata: dict, sequential_data:
         if config_text:
             plt.subplots_adjust(bottom=0.15)
             plt.figtext(0.5, 0.02, config_text, ha='center', fontsize=9, style='italic')
-        time_file = os.path.join(out_dir, f"time_{safe_label}.png")
+        time_file = os.path.join(out_dir, f"time_{safe_label}.svg")
         plt.savefig(time_file, bbox_inches="tight")
         plt.close()
 
@@ -169,7 +169,7 @@ def plot_per_implementation(data, out_dir: str, metadata: dict, sequential_data:
         if config_text:
             plt.subplots_adjust(bottom=0.15)
             plt.figtext(0.5, 0.02, config_text, ha='center', fontsize=9, style='italic')
-        speed_file = os.path.join(out_dir, f"speedup_{safe_label}.png")
+        speed_file = os.path.join(out_dir, f"speedup_{safe_label}.svg")
         plt.savefig(speed_file, bbox_inches="tight")
         plt.close()
 
@@ -254,7 +254,7 @@ def plot_combined(data, out_dir: str, metadata: dict, sequential_data: dict):
         if config_text:
             plt.subplots_adjust(bottom=0.12)
             plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
-        combined_time = os.path.join(out_dir, f"combined_time{config_suffix}.png")
+        combined_time = os.path.join(out_dir, f"combined_time{config_suffix}.svg")
         plt.savefig(combined_time, bbox_inches="tight")
         plt.close()
         created.append(combined_time)
@@ -287,7 +287,7 @@ def plot_combined(data, out_dir: str, metadata: dict, sequential_data: dict):
         if config_text:
             plt.subplots_adjust(bottom=0.12)
             plt.figtext(0.45, 0.02, config_text, ha='center', fontsize=9, style='italic')
-        combined_speed = os.path.join(out_dir, f"combined_speedup{config_suffix}.png")
+        combined_speed = os.path.join(out_dir, f"combined_speedup{config_suffix}.svg")
         plt.savefig(combined_speed, bbox_inches="tight")
         plt.close()
         created.append(combined_speed)
