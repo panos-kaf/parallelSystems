@@ -2,6 +2,7 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 from pathlib import Path
+import argparse
 
 def parse_conc_ll_results(filename):
     """Parse the concurrent linked list results file"""
@@ -132,7 +133,8 @@ def plot_speedup(serial_baselines, data, output_dir):
         ax.grid(True, which="major", ls="-", alpha=0.5)
         
         # Legend outside
-        ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0, fontsize=10)
+#ax.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0, fontsize=10)
+        ax.legend(loc='upper left', fontsize=10)
         
         plt.tight_layout()
         
@@ -196,9 +198,17 @@ def print_summary(serial_baselines, data):
 
 def main():
     # File paths
-    results_file = Path('/home/nicholas/parallelSystems/lab2/conc_ll/results/run_conc_ll_nb_mod.out')
-    output_dir = Path('/home/nicholas/parallelSystems/lab2/conc_ll/plots')
+#    results_file = Path('/home/nicholas/parallelSystems/lab2/conc_ll/results/run_conc_ll_nb_mod.out')
+#   output_dir = Path('/home/nicholas/parallelSystems/lab2/conc_ll/plots')
     
+    p=argparse.ArgumentParser()
+    p.add_argument("results_file")
+    p.add_argument("output_dir", nargs='?', default=".")
+    args=p.parse_args()
+
+    results_file = args.results_file
+    output_dir = args.output_dir
+
     # Parse results
     print("Parsing results...")
     serial_baselines, data = parse_conc_ll_results(results_file)
