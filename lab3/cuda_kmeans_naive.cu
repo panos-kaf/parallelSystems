@@ -21,7 +21,8 @@ inline void checkLastCudaError() {
 #endif
 
 __device__ int get_tid() {
-  return 0; /* TODO: Calculate 1-Dim global ID of a thread */
+  // Assuming that blocks are one dimensioanl for now
+  return threadIdx.x + blockDim.x  * blockIdx.x; /* TODO: Calculate 1-Dim global ID of a thread */
 }
 
 /* square of Euclid distance between two multi-dimensional points */
@@ -37,6 +38,12 @@ double euclid_dist_2(int numCoords,
   double ans = 0.0;
 
   /* TODO: Calculate the euclid_dist of elem=objectId of objects from elem=clusterId from clusters*/
+  for (i = 0; i < numCoords; i++) {
+    double diff = objects[objectId][i] - clusters[clusterId][i];
+    ans += diff * diff;
+  }
+
+  // Look a further down (sqrt not needed)
 
   return (ans);
 }
@@ -54,17 +61,20 @@ void find_nearest_cluster(int numCoords,
   int tid = get_tid();
 
   /* TODO: Maybe something is missing here... should all threads run this? */
-  if (1) {
+  // Bounds check
+  if (tid < numObjs) {
     int index, i;
     double dist, min_dist;
 
     /* find the cluster id that has min distance to object */
     index = 0;
     /* TODO: call min_dist = euclid_dist_2(...) with correct objectId/clusterId */
+    // I think it is tid, index let's discuss
+    min_dist = euclid_dist_2(numCoords, numObjs, numClusters, objects, deviceClusters, tid, index);
 
     for (i = 1; i < numClusters; i++) {
       /* TODO: call dist = euclid_dist_2(...) with correct objectId/clusterId */
-
+      dist = euclid_dist_2(numCoords, numObjs, numClusters, objects, deviceClusters, tid ,i);
       /* no need square root */
       if (dist < min_dist) { /* find the min and its array index */
         min_dist = dist;
@@ -74,7 +84,8 @@ void find_nearest_cluster(int numCoords,
 
     if (deviceMembership[tid] != index) {
       /* TODO: Maybe something is missing here... is this write safe? */
-      (*devdelta) += 1.0;
+      atomicAdd(devdelta, 1.0);
+      // (*devdelta) += 1.0;
     }
 
     /* assign the deviceMembership to object objectId */
@@ -131,7 +142,7 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
   timing = wtime();
 
   const unsigned int numThreadsPerClusterBlock = (numObjs > blockSize) ? blockSize : numObjs;
-  const unsigned int numClusterBlocks = -1; /* TODO: Calculate Grid size, e.g. number of blocks. */
+  const unsigned int numClusterBlocks = numObjs / numThreadsPerClusterBlock + ((numObjs % numThreadsPerClusterBlock) ? 1 : 0); /* TODO: Calculate Grid size, e.g. number of blocks. */
   const unsigned int clusterBlockSharedDataSize = 0;
 
   checkCuda(cudaMalloc(&deviceObjects, numObjs * numCoords * sizeof(double)));
@@ -157,8 +168,8 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
     /* GPU part: calculate new memberships */
 
     timing_transfers = wtime();
-    /* TODO: Copy clusters to deviceClusters
-    checkCuda(cudaMemcpy(...)); */
+    /* TODO: Copy clusters to deviceClusters */
+    checkCuda(cudaMemcpy(deviceClusters, clusters, numClusters * numCoords * sizeof(double), cudaMemcpyHostToDevice));
     transfers_time += wtime() - timing_transfers;
 
     checkCuda(cudaMemset(dev_delta_ptr, 0, sizeof(double)));
@@ -176,11 +187,11 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
     //printf("Kernels complete for itter %d, updating data in CPU\n", loop);
 
     timing_transfers = wtime();
-    /* TODO: Copy deviceMembership to membership
-        checkCuda(cudaMemcpy(...)); */
+    /* TODO: Copy deviceMembership to membership */
+        checkCuda(cudaMemcpy(membership, deviceMembership, numObjs * sizeof(int), cudaMemcpyDeviceToHost));
 
-    /* TODO: Copy dev_delta_ptr to &delta
-      checkCuda(cudaMemcpy(...)); */
+    /* TODO: Copy dev_delta_ptr to &delta */
+      checkCuda(cudaMemcpy(&delta, dev_delta_ptr, sizeof(double), cudaMemcpyDeviceToHost));
     transfers_time += wtime() - timing_transfers;
 
     /* CPU part: Update cluster centers*/
