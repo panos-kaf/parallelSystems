@@ -39,7 +39,7 @@ double euclid_dist_2(int numCoords,
 
   /* TODO: Calculate the euclid_dist of elem=objectId of objects from elem=clusterId from clusters*/
   for (i = 0; i < numCoords; i++) {
-    double diff = objects[objectId][i] - clusters[clusterId][i];
+    double diff = objects[objectId * numCoords + i] - clusters[clusterId * numCoords + i];
     ans += diff * diff;
   }
 
@@ -188,10 +188,10 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
 
     timing_transfers = wtime();
     /* TODO: Copy deviceMembership to membership */
-        checkCuda(cudaMemcpy(membership, deviceMembership, numObjs * sizeof(int), cudaMemcpyDeviceToHost));
+    checkCuda(cudaMemcpy(membership, deviceMembership, numObjs * sizeof(int), cudaMemcpyDeviceToHost));
 
     /* TODO: Copy dev_delta_ptr to &delta */
-      checkCuda(cudaMemcpy(&delta, dev_delta_ptr, sizeof(double), cudaMemcpyDeviceToHost));
+    checkCuda(cudaMemcpy(&delta, dev_delta_ptr, sizeof(double), cudaMemcpyDeviceToHost));
     transfers_time += wtime() - timing_transfers;
 
     /* CPU part: Update cluster centers*/
