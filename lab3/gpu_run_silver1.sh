@@ -1,41 +1,56 @@
 #!/bin/bash
 
+## Give the Job a descriptive name
+#PBS -N run_kmeans_shared_transpose
+
+## Output and error files
+#PBS -o results/run_kmeans_shared_transpose.out
+#PBS -e results/run_kmeans_shared_transpose.err
+
+## How many machines should we get?
+#PBS -l nodes=silver1:ppn=40
+
+##How long should the job run for?
+#PBS -l walltime=00:10:00
+
+cd /home/parallel/parlab04/lab/lab3
+
 export CUDA_VISIBLE_DEVICES=1
 # sizes='2 8 32'
 # sizes='8'
 # sizes='512'
-# sizes='1024'
+sizes='1024'
 # sizes='4096'
 # sizes='32 64 128 256 512 1024 2048'
-sizes='256'
+# sizes='256'
 
 # coordinates='1'
 # coordinates='16'
 # coordinates='8'
-# coordinates='32'
+coordinates='32'
 # coordinates='128'
 # coordinates='2 4 8'
-#coordinates='1'
-coordinates='2 4 16 32'
+# coordinates='1'
+# coordinates='2 4 16 32'
 
 # centers='256'
-# centers='64'
+centers='64'
 # centers='8'
 # centers='2'
 # centers='2 4 16 64'
 # centers='2 4 16'
 
-centers='4 16 64'
+# centers='4 16 64'
 
 loop_threashold='10'
 # loop_threashold='100''
 
-block_size='32 64 128 256 512 1024'
+block_size='32 48 64 128 256 512 1024'
 
 progs=(
 	kmeans_seq
-	#kmeans_cuda_naive
-	#kmeans_cuda_transpose
+	kmeans_cuda_naive
+	kmeans_cuda_transpose
 	#kmeans_cuda_shared
 	#kmeans_cuda_all_gpu
 	#kmeans_cuda_all_gpu_delta_reduction
