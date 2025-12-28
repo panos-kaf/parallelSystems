@@ -51,35 +51,65 @@ def generate_plots(seq_time, data, title_suffix):
     data.sort(key=lambda x: x['bs'])
     
     bs_labels = [str(d['bs']) for d in data]
-    x_labels_time = ['Sequential'] + bs_labels
+    x_labels_time = bs_labels
     
     gpu_times = np.array([d['gpu'] for d in data])
     transfer_times = np.array([d['transfers'] for d in data])
     cpu_times = np.array([d['cpu'] for d in data])
     speedups = [seq_time / d['total'] for d in data]
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
+    # Broken y-axis: two subplots for time, one for speedup
+    fig = plt.figure(figsize=(16, 9))
+    gs = fig.add_gridspec(2, 2, height_ratios=[1, 3], width_ratios=[2, 1])
+    ax1_top = fig.add_subplot(gs[0, 0])
+    ax1_bottom = fig.add_subplot(gs[1, 0], sharex=ax1_top)
+    ax2 = fig.add_subplot(gs[:, 1])
+
     fig.suptitle(f'{title_suffix}', fontsize=16, fontweight='bold')
 
-    # 1. Stacked Bar Plot (Time)
     x_time = np.arange(len(x_labels_time))
     width = 0.6
 
-    # Sequential bar
-    ax1.bar(0, seq_time, width, color='lightgray', label='Sequential Total', edgecolor='black', linewidth=1)
-    
-    # GPU Stacked bars
-    # We use a small linewidth and black edgecolor to make the tiny transfer bars visible
-    ax1.bar(x_time[1:], gpu_times, width, label='GPU Execution', color='#2ecc71', edgecolor='black', linewidth=0.5)
-    ax1.bar(x_time[1:], transfer_times, width, bottom=gpu_times, label='Data Transfers', color='#e74c3c', edgecolor='black', linewidth=0.5)
-    ax1.bar(x_time[1:], cpu_times, width, bottom=gpu_times + transfer_times, label='Other CPU', color='#3498db', edgecolor='black', linewidth=0.5)
+    # Plot bars on both axes
+    for ax in [ax1_top, ax1_bottom]:
+        ax.bar(x_time, gpu_times, width, label='GPU Execution', color='#2ecc71', edgecolor='black', linewidth=0.5)
+        ax.bar(x_time, transfer_times, width, bottom=gpu_times, label='Data Transfers', color='#e74c3c', edgecolor='black', linewidth=0.5)
+        ax.bar(x_time, cpu_times, width, bottom=gpu_times + transfer_times, label='Other CPU', color='#3498db', edgecolor='black', linewidth=0.5)
 
-    ax1.set_ylabel('Time (ms)', fontweight='bold')
-    ax1.set_xlabel('Implementation / Block Size', fontweight='bold')
-    ax1.set_xticks(x_time)
-    ax1.set_xticklabels(x_labels_time)
-    ax1.legend()
-    ax1.grid(axis='y', linestyle='--', alpha=0.7)
+    # Top axis: show only the sequential line
+    ax1_top.axhline(seq_time, color='gray', linestyle='--', linewidth=2, label=f'Sequential Time ({seq_time:.1f} ms)')
+    ax1_top.text(len(x_time)-0.5, seq_time, f'Sequential: {seq_time:.1f} ms', 
+                 color='gray', fontsize=10, fontweight='bold', va='bottom', ha='right', alpha=0.8)
+
+    # Set y-limits for broken axis
+    ax1_top.set_ylim(seq_time * 0.95, seq_time * 1.05)  # Show only around the sequential time
+    ax1_bottom.set_ylim(0, max(gpu_times + transfer_times + cpu_times) * 1.2)  # Show only the GPU bars
+
+    # Hide spines between axes
+    ax1_top.spines['bottom'].set_visible(False)
+    ax1_bottom.spines['top'].set_visible(False)
+    ax1_top.tick_params(labeltop=False)  # don't put tick labels at the top
+    ax1_bottom.xaxis.tick_bottom()
+
+    # Diagonal lines to indicate break
+    d = .015  # size of diagonal lines
+    kwargs = dict(transform=ax1_top.transAxes, color='k', clip_on=False)
+    ax1_top.plot((-d, +d), (-d, +d), **kwargs)        # top-left diagonal
+    ax1_top.plot((1 - d, 1 + d), (-d, +d), **kwargs)  # top-right diagonal
+
+    kwargs.update(transform=ax1_bottom.transAxes)  # switch to the bottom axes
+    ax1_bottom.plot((-d, +d), (1 - d, 1 + d), **kwargs)  # bottom-left diagonal
+    ax1_bottom.plot((1 - d, 1 + d), (1 - d, 1 + d), **kwargs)  # bottom-right diagonal
+
+    ax1_bottom.set_ylabel('Time (ms)', fontweight='bold')
+    ax1_bottom.set_xlabel('Block Size', fontweight='bold')
+    ax1_bottom.set_xticks(x_time)
+    ax1_bottom.set_xticklabels(x_labels_time)
+    ax1_bottom.legend()
+    ax1_bottom.grid(axis='y', linestyle='--', alpha=0.7)
+
+    # Only show legend once
+    ax1_top.legend().set_visible(False)
 
     # 2. Speedup Plot
     x_speedup = np.arange(len(bs_labels))
