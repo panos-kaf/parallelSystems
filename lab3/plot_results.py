@@ -2,11 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import re
 import os
+import sys
 
 def parse_results(filename):
     if not os.path.exists(filename):
         print(f"Error: {filename} not found.")
-        return 0, [], []
+        return 0, {}
 
     with open(filename, 'r') as f:
         content = f.read()
@@ -17,14 +18,12 @@ def parse_results(filename):
 
     # Split by the separator used in the file
     sections = content.split('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~')
-    
-    naive_data = []
-    transpose_data = []
+
+    impl_data = {}
 
     for section in sections:
         if 'block_size' not in section:
             continue
-        
         try:
             bs = int(re.search(r'block_size = (\d+)', section).group(1))
             t_gpu = float(re.search(r't_gpu_avg = ([\d.]+) ms', section).group(1))
@@ -34,14 +33,17 @@ def parse_results(filename):
 
             entry = {'bs': bs, 'gpu': t_gpu, 'transfers': t_transfers, 'cpu': t_cpu, 'total': t_total}
 
-            if 'Naive GPU Kmeans' in section:
-                naive_data.append(entry)
-            elif 'Transpose GPU Kmeans' in section:
-                transpose_data.append(entry)
+            # Find implementation name (first line with 'Kmeans' and not 'Sequential')
+            match = re.search(r'^(.*Kmeans.*?)$', section, re.MULTILINE)
+            if match and 'Sequential' not in match.group(1):
+                impl_name = match.group(1).strip()
+                if impl_name not in impl_data:
+                    impl_data[impl_name] = []
+                impl_data[impl_name].append(entry)
         except (AttributeError, ValueError):
             continue
 
-    return seq_time, naive_data, transpose_data
+    return seq_time, impl_data
 
 def generate_plots(seq_time, data, title_suffix):
     if not data:
@@ -130,19 +132,38 @@ def generate_plots(seq_time, data, title_suffix):
     
     if not os.path.exists('plots'):
         os.makedirs('plots')
-    
-    filename = f'plots/kmeans_{title_suffix.lower().replace(" ", "_")}.png'
+
+    # Clean up the title_suffix for filename: lowercase, replace spaces with _, remove non-alphanum except _
+    import re
+    clean_name = title_suffix.lower()
+    clean_name = re.sub(r'\s+', '_', clean_name)  # spaces to _
+    clean_name = re.sub(r'[^a-z0-9_]', '', clean_name)  # remove non-alphanum except _
+    clean_name = clean_name.rstrip('_')
+    if not clean_name:
+        clean_name = 'kmeans'
+    filename = f'plots/kmeans_{clean_name}.png'
     plt.savefig(filename, dpi=300)
     print(f"Saved plot to {filename}")
 
 def main():
-    seq_time, naive_data, transpose_data = parse_results('results/run_kmeans_shared_transpose.out')
-    
-    if naive_data:
-        generate_plots(seq_time, naive_data, 'Naive Implementation')
-    
-    if transpose_data:
-        generate_plots(seq_time, transpose_data, 'Transpose Implementation')
+    file_path = sys.argv[1] if len(sys.argv) > 1 else ''
+
+    if not file_path:
+        print("Usage: python plot_results.py <results_file>")
+        return
+
+    seq_time, impl_data = parse_results(file_path)
+
+    if not impl_data:
+        print("No implementation data found.")
+        return
+
+    for impl_name, data in impl_data.items():
+        # Clean up the implementation name for the plot title
+        title = impl_name.replace('GPU', '').replace('Kmeans', '').replace('Implementation', '').strip()
+        if not title:
+            title = impl_name.strip()
+        generate_plots(seq_time, data, title)
 
 if __name__ == "__main__":
     main()

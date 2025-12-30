@@ -43,7 +43,7 @@ double euclid_dist_2(int numCoords,
     ans += diff * diff;
   }
 
-  // Look a further down (sqrt not needed)
+  // Look further down (sqrt not needed)
 
   return (ans);
 }

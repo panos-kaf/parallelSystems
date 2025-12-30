@@ -125,7 +125,6 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
   double **dimClusters = (double **) calloc_2d(numCoords, numClusters, sizeof(double));  //calloc_2d(...) -> [numCoords][numClusters]
   double **newClusters = (double **) calloc_2d(numCoords, numClusters, sizeof(double));  //calloc_2d(...) -> [numCoords][numClusters]
 
-
   double *deviceObjects;
   double *deviceClusters;
   int *deviceMembership;
@@ -185,7 +184,7 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
 
     timing_transfers = wtime();
     /* TODO: Copy clusters to deviceClusters */
-    checkCuda(cudaMemcpy(deviceClusters, dimClusters, numClusters * numCoords * sizeof(double), cudaMemcpyHostToDevice));
+    checkCuda(cudaMemcpy(deviceClusters, dimClusters[0], numClusters * numCoords * sizeof(double), cudaMemcpyHostToDevice));
     transfers_time += wtime() - timing_transfers;
 
     checkCuda(cudaMemset(dev_delta_ptr, 0, sizeof(double)));
@@ -250,7 +249,6 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
       clusters[j * numCoords + i] = dimClusters[i][j];
     }
   }
-
 
   timing = wtime() - timing;
   printf("nloops = %d  : total = %lf ms\n\t-> t_loop_avg = %lf ms\n\t-> t_loop_min = %lf ms\n\t-> t_loop_max = %lf ms\n\t"
