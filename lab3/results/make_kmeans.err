@@ -71,140 +71,36 @@ ptxas info    : Compiling entry function '_Z20find_nearest_clusteriiiPdS_PiS_' f
 ptxas info    : Function properties for _Z20find_nearest_clusteriiiPdS_PiS_
     0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
 ptxas info    : Used 40 registers, 368 bytes cmem[0]
-cuda_kmeans_shared.cu(134): warning #128-D: loop is not reachable
-    for (i = 0; i < numCoords; i++) {
-    ^
-
-Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
-
-cuda_kmeans_shared.cu(151): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int numClusterBlocks = -1;
-                                          ^
-
-cuda_kmeans_shared.cu(158): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int clusterBlockSharedDataSize = -1;
-                                                    ^
-
-cuda_kmeans_shared.cu(36): warning #177-D: variable "i" was declared but never referenced
-    int i;
-        ^
-
-Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
-
-cuda_kmeans_shared.cu(134): warning #128-D: loop is not reachable
-    for (i = 0; i < numCoords; i++) {
-    ^
-
-cuda_kmeans_shared.cu(151): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int numClusterBlocks = -1;
-                                          ^
-
-cuda_kmeans_shared.cu(158): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int clusterBlockSharedDataSize = -1;
-                                                    ^
-
-cuda_kmeans_shared.cu(114): warning #177-D: variable "loop_iterations" was declared but never referenced
+cuda_kmeans_shared.cu(123): warning #177-D: variable "loop_iterations" was declared but never referenced
     int loop_iterations = 0;
         ^
 
-cuda_kmeans_shared.cu(29): warning #177-D: function "euclid_dist_2_transpose" was declared but never referenced
-  double euclid_dist_2_transpose(int numCoords,
-         ^
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
 
 ptxas info    : 0 bytes gmem
 ptxas info    : Compiling entry function '_Z20find_nearest_clusteriiiPdS_PiS_' for 'sm_60'
 ptxas info    : Function properties for _Z20find_nearest_clusteriiiPdS_PiS_
     0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 8 registers, 368 bytes cmem[0]
-cuda_kmeans_all_gpu.cu(126): warning #128-D: loop is not reachable
-    for (i = 0; i < numCoords; i++) {
-    ^
-
-Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
-
-cuda_kmeans_all_gpu.cu(139): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int numClusterBlocks = -1;
-                                          ^
-
-cuda_kmeans_all_gpu.cu(145): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int clusterBlockSharedDataSize = -1;
-                                                    ^
-
-cuda_kmeans_all_gpu.cu(206): warning #68-D: integer conversion resulted in a change of sign
-      const unsigned int update_centroids_dim_sz = -1;
-                                                   ^
-
-cuda_kmeans_all_gpu.cu(36): warning #177-D: variable "i" was declared but never referenced
-    int i;
-        ^
-
-Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
-
-cuda_kmeans_all_gpu.cu(126): warning #128-D: loop is not reachable
-    for (i = 0; i < numCoords; i++) {
-    ^
-
-cuda_kmeans_all_gpu.cu(139): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int numClusterBlocks = -1;
-                                          ^
-
-cuda_kmeans_all_gpu.cu(145): warning #68-D: integer conversion resulted in a change of sign
-    const unsigned int clusterBlockSharedDataSize = -1;
-                                                    ^
-
-cuda_kmeans_all_gpu.cu(206): warning #68-D: integer conversion resulted in a change of sign
-      const unsigned int update_centroids_dim_sz = -1;
-                                                   ^
-
-cuda_kmeans_all_gpu.cu(204): warning #177-D: variable "update_centroids_block_sz" was declared but never referenced
-      const unsigned int update_centroids_block_sz = (numCoords * numClusters > blockSize) ? blockSize : numCoords *
-                         ^
-
-cuda_kmeans_all_gpu.cu(206): warning #177-D: variable "update_centroids_dim_sz" was declared but never referenced
-      const unsigned int update_centroids_dim_sz = -1;
-                         ^
-
-cuda_kmeans_all_gpu.cu(107): warning #177-D: variable "loop_iterations" was declared but never referenced
+ptxas info    : Used 32 registers, 368 bytes cmem[0]
+cuda_kmeans_all_gpu.cu(152): warning #177-D: variable "loop_iterations" was declared but never referenced
     int loop_iterations = 0;
         ^
 
-cuda_kmeans_all_gpu.cu(108): warning #177-D: variable "index" was declared but never referenced
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+cuda_kmeans_all_gpu.cu(153): warning #177-D: variable "index" was declared but never referenced
     int i, j, index, loop = 0;
               ^
-
-cuda_kmeans_all_gpu.cu(113): warning #177-D: variable "newClusters" was declared but never referenced
-    double **newClusters = 
-             ^
-
-cuda_kmeans_all_gpu.cu(138): warning #177-D: variable "numThreadsPerClusterBlock" was declared but never referenced
-    const unsigned int numThreadsPerClusterBlock = (numObjs > blockSize) ? blockSize : numObjs;
-                       ^
-
-cuda_kmeans_all_gpu.cu(139): warning #177-D: variable "numClusterBlocks" was declared but never referenced
-    const unsigned int numClusterBlocks = -1;
-                       ^
-
-cuda_kmeans_all_gpu.cu(29): warning #177-D: function "euclid_dist_2_transpose" was declared but never referenced
-  double euclid_dist_2_transpose(int numCoords,
-         ^
-
-cuda_kmeans_all_gpu.cu(45): warning #177-D: function "find_nearest_cluster" was declared but never referenced
-  void find_nearest_cluster(int numCoords,
-       ^
-
-cuda_kmeans_all_gpu.cu(72): warning #177-D: function "update_centroids" was declared but never referenced
-  void update_centroids(int numCoords,
-       ^
 
 ptxas info    : 0 bytes gmem
 ptxas info    : Compiling entry function '_Z16update_centroidsiiPiPdS0_' for 'sm_60'
 ptxas info    : Function properties for _Z16update_centroidsiiPiPdS0_
     0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 2 registers, 352 bytes cmem[0]
-ptxas info    : Compiling entry function '_Z20find_nearest_clusteriiiPdS_PiS_' for 'sm_60'
-ptxas info    : Function properties for _Z20find_nearest_clusteriiiPdS_PiS_
+ptxas info    : Used 34 registers, 352 bytes cmem[0], 32 bytes cmem[2]
+ptxas info    : Compiling entry function '_Z20find_nearest_clusteriiiPdPiS_S_S0_S_' for 'sm_60'
+ptxas info    : Function properties for _Z20find_nearest_clusteriiiPdPiS_S_S0_S_
     0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
-ptxas info    : Used 2 registers, 368 bytes cmem[0]
+ptxas info    : Used 32 registers, 384 bytes cmem[0]
 cuda_kmeans_all_gpu_delta_reduction.cu(134): warning #128-D: loop is not reachable
     for (i = 0; i < numCoords; i++) {
     ^
@@ -302,3 +198,22 @@ ptxas info    : Compiling entry function '_Z20find_nearest_clusteriiiPdPiS_S_S0_
 ptxas info    : Function properties for _Z20find_nearest_clusteriiiPdPiS_S_S0_S_
     0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
 ptxas info    : Used 2 registers, 384 bytes cmem[0]
+cuda_kmeans_all_gpu_atomics.cu(157): warning #177-D: variable "loop_iterations" was declared but never referenced
+    int loop_iterations = 0;
+        ^
+
+Remark: The warnings can be suppressed with "-diag-suppress <warning-number>"
+
+cuda_kmeans_all_gpu_atomics.cu(158): warning #177-D: variable "index" was declared but never referenced
+    int i, j, index, loop = 0;
+              ^
+
+ptxas info    : 0 bytes gmem
+ptxas info    : Compiling entry function '_Z16update_centroidsiiPiPdS0_' for 'sm_60'
+ptxas info    : Function properties for _Z16update_centroidsiiPiPdS0_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 26 registers, 352 bytes cmem[0], 32 bytes cmem[2]
+ptxas info    : Compiling entry function '_Z20find_nearest_clusteriiiPdPiS_S_S0_S_' for 'sm_60'
+ptxas info    : Function properties for _Z20find_nearest_clusteriiiPdPiS_S_S0_S_
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 32 registers, 384 bytes cmem[0]

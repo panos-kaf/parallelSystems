@@ -1,0 +1,36 @@
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+dataset_size = 1024.00 MB    numObjs = 4194304    numCoords = 32    numClusters = 64, block_size = 32
+
+|-------------Sequential Kmeans-------------|
+
+t_alloc: 11.415005 ms
+
+nloops = 10  : total = 66920.269012 ms
+	-> t_loop_avg = 6692.026901 ms
+	-> t_loop_min = 6668.494940 ms
+	-> t_loop_max = 6704.504013 ms
+
+|-------------------------------------------|
+
+
+|-----------Shared GPU Kmeans------------|
+
+t_alloc: 1111.042023 ms
+
+t_alloc_gpu: 1321.545124 ms
+
+t_get_gpu: 241.865158 ms
+
+nloops = 10  : total = 2512.694120 ms
+	-> t_loop_avg = 251.269412 ms
+	-> t_loop_min = 237.914801 ms
+	-> t_loop_max = 363.832951 ms
+	-> t_cpu_avg = 193.356395 ms
+	-> t_gpu_avg = 53.196216 ms
+	-> t_transfers_avg = 4.709578 ms
+
+|-------------------------------------------|
+
+Performing validation....PASSED!
