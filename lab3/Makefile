@@ -28,7 +28,7 @@ LIBS        =
 SEQ_HELP_OBJ = $(OBJECT_DIR)/main_sec.o $(OBJECT_DIR)/file_io.o $(OBJECT_DIR)/util.o 
 CUDA_HELP_OBJ = $(OBJECT_DIR)/main_gpu.o  $(OBJECT_DIR)/file_io.o $(OBJECT_DIR)/util.o $(OBJECT_DIR)/error.o $(OBJECT_DIR)/alloc.o $(OBJECT_DIR)/seq_kmeans.o
 
-all: kmeans_seq kmeans_cuda_naive kmeans_cuda_transpose kmeans_cuda_shared kmeans_cuda_all_gpu kmeans_cuda_all_gpu_delta_reduction
+all: kmeans_seq kmeans_cuda_naive kmeans_cuda_transpose kmeans_cuda_shared kmeans_cuda_all_gpu kmeans_cuda_all_gpu_delta_reduction kmeans_cuda_all_gpu_atomics
 
 #---------------------------------------------------------------------
 
@@ -49,6 +49,9 @@ kmeans_cuda_all_gpu: $(OBJECT_DIR)/cuda_kmeans_all_gpu.o $(CUDA_HELP_OBJ)
 
 kmeans_cuda_all_gpu_delta_reduction: $(OBJECT_DIR)/cuda_kmeans_all_gpu_delta_reduction.o $(CUDA_HELP_OBJ)
 	$(NVCC) $(NVCCFLAGS) $^ -o $@ $(LDFLAGS) 
+
+kmeans_cuda_all_gpu_atomics: $(OBJECT_DIR)/cuda_kmeans_all_gpu_atomics.o $(CUDA_HELP_OBJ)
+	$(NVCC) $(NVCCFLAGS) $^ -o $@ $(LDFLAGS)
 		
 #kmeans_cuda_all_gpu_reduction: $(OBJECT_DIR)/cuda_kmeans_all_gpu_reduction.o $(CUDA_HELP_OBJ)
 #	$(NVCC) $(NVCCFLAGS) $^ -o $@ $(LDFLAGS) 
@@ -70,6 +73,9 @@ $(OBJECT_DIR)/cuda_kmeans_all_gpu.o: cuda_kmeans_all_gpu.cu
 	$(NVCC) $(NVCCFLAGS) -c $< -o $@
 
 $(OBJECT_DIR)/cuda_kmeans_all_gpu_delta_reduction.o: cuda_kmeans_all_gpu_delta_reduction.cu
+	$(NVCC) $(NVCCFLAGS) -c $< -o $@
+
+$(OBJECT_DIR)/cuda_kmeans_all_gpu_atomics.o: cuda_kmeans_all_gpu_atomics.cu
 	$(NVCC) $(NVCCFLAGS) -c $< -o $@
 	
 #$(OBJECT_DIR)/cuda_kmeans_all_gpu_reduction.o: cuda_kmeans_all_gpu_reduction.cu

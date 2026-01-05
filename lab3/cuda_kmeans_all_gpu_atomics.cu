@@ -53,7 +53,7 @@ void find_nearest_cluster(int numCoords,
                           TODO: If you choose to do (some of) the new centroid calculation here, you will need some extra parameters here (from "update_centroids").
 */
                           int *devicenewClusterSize,           //  [numClusters]
-                          double *devicenewClusters,    //  [numCoords][numClusters]
+                          double *devicenewClusters,    //  [numCoords][numClusters] 
                           double *deviceClusters,    //  [numCoords][numClusters]
                           int *deviceMembership,          //  [numObjs]
                           double *devdelta) {
@@ -97,10 +97,13 @@ void find_nearest_cluster(int numCoords,
     /* assign the deviceMembership to object objectId */
     deviceMembership[tid] = index;
 
-    /* Update cluster sums for this object using atomics */
-    atomicAdd(&devicenewClusterSize[index], 1);
-    for (int j = 0; j < numCoords; j++) {
-      atomicAdd(&devicenewClusters[j * numClusters + index], deviceObjects[j * numObjs + tid]);
+    tid = get_tid();
+    for (int i = tid; i < numObjs; i += blockDim.x * gridDim.x) {
+        int cluster = deviceMembership[i];
+        atomicAdd(&devicenewClusterSize[cluster], 1);
+        for (int j = 0; j < numCoords; j++) {
+            atomicAdd(&devicenewClusters[j * numClusters + cluster], deviceObjects[j * numObjs + i]);
+        }
     }
   }
 }
@@ -112,19 +115,21 @@ void update_centroids(int numCoords,
                       double *devicenewClusters,    //  [numCoords][numClusters]
                       double *deviceClusters)    //  [numCoords][numClusters])
 {
+
   /* TODO: additional steps for calculating new centroids in GPU? */
   /* average the sum and replace old cluster centers with newClusters */
-  int tid = get_tid(); /* Global thread index */
-  for (int i = tid; i < numClusters; i += blockDim.x * gridDim.x) {
-    for (int j = 0; j < numCoords; j++) {
+  int tid = get_tid();
+  if (tid < numClusters * numCoords) {
+      int i = tid % numClusters;
+      int j = tid / numClusters;
       if (devicenewClusterSize[i] > 0)
-        deviceClusters[j * numClusters + i] = devicenewClusters[j * numClusters + i] / devicenewClusterSize[i];
-      devicenewClusters[j * numClusters + i] = 0.0;   /* set back to 0 */
-    }
-    devicenewClusterSize[i] = 0;   /* set back to 0 */
+          deviceClusters[j * numClusters + i] = devicenewClusters[j * numClusters + i] / devicenewClusterSize[i];
+      devicenewClusters[j * numClusters + i] = 0.0;
+      if (j == 0) devicenewClusterSize[i] = 0;
   }
 }
 
+//
 //  ----------------------------------------
 //  DATA LAYOUT
 //
@@ -186,7 +191,7 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
   printf("t_alloc: %lf ms\n\n", 1000 * timing);
   timing = wtime();
   const unsigned int numThreadsPerClusterBlock = (numObjs > blockSize) ? blockSize : numObjs;
-  const unsigned int numClusterBlocks = numObjs / numThreadsPerClusterBlock + ((numObjs % numThreadsPerClusterBlock) ? 1 : 0); /* TODO: Calculate Grid size, e.g. number of blocks. */
+  const unsigned int numClusterBlocks = numObjs / numThreadsPerClusterBlock + ((numObjs % numThreadsPerClusterBlock) ? 1 : 0);; /* TODO: Calculate Grid size, e.g. number of blocks. */
   /*	Define the shared memory needed per block.
       - BEWARE: We can overrun our shared memory here if there are too many
       clusters or too many coordinates!
@@ -250,8 +255,9 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
     checkCuda(cudaMemcpy(&delta, dev_delta_ptr, sizeof(double), cudaMemcpyDeviceToHost));
     transfers_time += wtime() - timing_transfers;
 
-    const unsigned int update_centroids_block_sz = (numClusters > blockSize) ? blockSize : numClusters;  /* TODO: can use different blocksize here if deemed better */
-    const unsigned int update_centroids_dim_sz = (numClusters + update_centroids_block_sz - 1) / update_centroids_block_sz; /* TODO: calculate dim for "update_centroids" */
+    const unsigned int update_centroids_block_sz = (numCoords * numClusters > blockSize) ? blockSize : numCoords *
+                                                                                                       numClusters;  /* TODO: can use different blocksize here if deemed better */
+    const unsigned int update_centroids_dim_sz = (numCoords * numClusters + update_centroids_block_sz - 1) / update_centroids_block_sz; /* TODO: calculate dim for "update_centroids" */
     timing_gpu = wtime();
     /* TODO: use dim for "update_centroids" and fire it */
      	update_centroids<<< update_centroids_dim_sz, update_centroids_block_sz, 0 >>>

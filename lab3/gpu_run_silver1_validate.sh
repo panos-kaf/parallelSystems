@@ -1,17 +1,18 @@
+
 #!/bin/bash
 
 ## Give the Job a descriptive name
-#PBS -N run_kmeans_all_gpu
+#PBS -N run_kmeans_shared
 
 ## Output and error files
-#PBS -o results/run_kmeans_all_gpu.out
-#PBS -e results/run_kmeans_all_gpu.err
+#PBS -o results/validate_kmeans_all_gpu.out
+#PBS -e results/validate_kmeans_all_gpu.err
 
 ## How many machines should we get?
 #PBS -l nodes=silver1:ppn=40
 
 ##How long should the job run for?
-#PBS -l walltime=00:10:00
+#PBS -l walltime=00:20:00
 
 cd /home/parallel/parlab04/lab/lab3
 
@@ -45,15 +46,16 @@ centers='64'
 loop_threashold='10'
 # loop_threashold='100''
 
-block_size='32 48 64 128 256 512 1024'
+#block_size='32 48 64 128 256 512 1024'
+block_size='32'
 
 progs=(
-	#kmeans_seq
+    #kmeans_seq
 	#kmeans_cuda_naive
-	#kmeans_cuda_transpose
-	#kmeans_cuda_shared
+    #kmeans_cuda_transpose
+    #kmeans_cuda_shared
 	kmeans_cuda_all_gpu
-    #kmeans_cuda_all_gpu_atomics
+    kmeans_cuda_all_gpu_atomics
     #kmeans_cuda_all_gpu_delta_reduction
 )
 
@@ -71,7 +73,7 @@ for size in $sizes; do
 		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
 		            elif [[ $prog == 'kmeans_cuda_transpose' ]]; then
 		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs                
-		            elif [[ $prog == 'kmeans_cuda_shared' ]]; then
+		            elif [[ $prog == ']kmeans_cuda_shared' ]]; then
 		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
 		            elif [[ $prog == 'kmeans_cuda_all_gpu' ]]; then
 		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
@@ -81,9 +83,9 @@ for size in $sizes; do
 		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
 		            elif [[ $prog == 'kmeans_cuda_gitman' ]]; then
 		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
-                    elif [[ $prog == 'kmeans_cuda_all_gpu_atomics' ]]; then
-		                ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
-		            fi
+		            elif [[ $prog == 'kmeans_cuda_all_gpu_atomics' ]]; then
+                        ./${prog} -s $size -n $coord -c $center -l $loop_threashold -b $bs
+                    fi
 		    	done    
             done
         done
