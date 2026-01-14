@@ -61,11 +61,11 @@ def generate_plots(seq_time, data, title_suffix):
     speedups = [seq_time / d['total'] for d in data]
 
     # Broken y-axis: two subplots for time, one for speedup
-    fig = plt.figure(figsize=(16, 9))
-    gs = fig.add_gridspec(2, 2, height_ratios=[1, 3], width_ratios=[2, 1])
+    fig = plt.figure(figsize=(10, 7))
+    gs = fig.add_gridspec(2, 1, height_ratios=[1, 3])
     ax1_top = fig.add_subplot(gs[0, 0])
     ax1_bottom = fig.add_subplot(gs[1, 0], sharex=ax1_top)
-    ax2 = fig.add_subplot(gs[:, 1])
+    # ax2 = fig.add_subplot(gs[:, 1])
 
     fig.suptitle(f'{title_suffix}', fontsize=16, fontweight='bold')
 
@@ -113,22 +113,22 @@ def generate_plots(seq_time, data, title_suffix):
     # Only show legend once
     ax1_top.legend().set_visible(False)
 
-    # 2. Speedup Plot
-    x_speedup = np.arange(len(bs_labels))
-    bars = ax2.bar(x_speedup, speedups, width, color='#f1c40f', edgecolor='black', linewidth=1)
+    # # 2. Speedup Plot
+    # x_speedup = np.arange(len(bs_labels))
+    # bars = ax2.bar(x_speedup, speedups, width, color='#f1c40f', edgecolor='black', linewidth=1)
     
-    ax2.set_ylabel('Speedup (Seq Time / GPU Total Time)', fontweight='bold')
-    ax2.set_xlabel('Block Size', fontweight='bold')
-    ax2.set_xticks(x_speedup)
-    ax2.set_xticklabels(bs_labels)
-    ax2.axhline(y=1, color='red', linestyle='--', linewidth=1, label='Baseline (1x)')
-    ax2.grid(axis='y', linestyle='--', alpha=0.7)
+    # ax2.set_ylabel('Speedup (Seq Time / GPU Total Time)', fontweight='bold')
+    # ax2.set_xlabel('Block Size', fontweight='bold')
+    # ax2.set_xticks(x_speedup)
+    # ax2.set_xticklabels(bs_labels)
+    # ax2.axhline(y=1, color='red', linestyle='--', linewidth=1, label='Baseline (1x)')
+    # ax2.grid(axis='y', linestyle='--', alpha=0.7)
     
-    # Add values on top of speedup bars
-    for i, v in enumerate(speedups):
-        ax2.text(i, v + 0.1, f'{v:.2f}x', ha='center', fontweight='bold', fontsize=10)
+    # # Add values on top of speedup bars
+    # for i, v in enumerate(speedups):
+    #     ax2.text(i, v + 0.1, f'{v:.2f}x', ha='center', fontweight='bold', fontsize=10)
 
-    plt.tight_layout(rect=[0, 0.03, 1, 0.95])
+    # plt.tight_layout(rect=[0, 0.03, 1, 0.95])
     
     if not os.path.exists('plots'):
         os.makedirs('plots')
@@ -141,7 +141,7 @@ def generate_plots(seq_time, data, title_suffix):
     clean_name = clean_name.rstrip('_')
     if not clean_name:
         clean_name = 'kmeans'
-    filename = f'plots/kmeans_{clean_name}.png'
+    filename = f'plots/kmeans_{clean_name}.svg'
     plt.savefig(filename, dpi=300)
     print(f"Saved plot to {filename}")
 
@@ -159,10 +159,13 @@ def main():
         return
 
     for impl_name, data in impl_data.items():
-        # Clean up the implementation name for the plot title
-        title = impl_name.replace('GPU', '').replace('Kmeans', '').replace('Implementation', '').strip()
-        if not title:
-            title = impl_name.strip()
+        # Extract the name between the '|' characters, or fallback to impl_name
+        match = re.search(r'\|\s*-*([^\|-]+?)-*\s*\|', impl_name)
+        if match:
+            name = match.group(1).strip()
+        else:
+            name = impl_name.strip()
+        title = f"{name} Implementation"
         generate_plots(seq_time, data, title)
 
 if __name__ == "__main__":

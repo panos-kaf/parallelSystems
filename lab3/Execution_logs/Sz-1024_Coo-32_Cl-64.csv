@@ -7,3 +7,5 @@ Sequential,-1,6.577663,6.533619,6.632093
 Sequential,-1,6.643740,6.617188,6.667081
 Implementation,blockSize,av_loop_t,min_loop_t,max_loop_t
 Implementation,blockSize,av_loop_t,min_loop_t,max_loop_t
+Implementation,blockSize,av_loop_t,min_loop_t,max_loop_t
+Sequential,-1,6.621114,6.578086,6.852412

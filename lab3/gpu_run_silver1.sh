@@ -1,11 +1,11 @@
 #!/bin/bash
 
 ## Give the Job a descriptive name
-#PBS -N run_kmeans_all_gpu
+#PBS -N run_kmeans_32_coords
 
 ## Output and error files
-#PBS -o results/run_kmeans_all_gpu.out
-#PBS -e results/run_kmeans_all_gpu.err
+#PBS -o results/run_kmeans_32_coords_all.out
+#PBS -e results/run_kmeans_32_coords_all.err
 
 ## How many machines should we get?
 #PBS -l nodes=silver1:ppn=40
@@ -48,10 +48,10 @@ loop_threashold='10'
 block_size='32 48 64 128 256 512 1024'
 
 progs=(
-	#kmeans_seq
-	#kmeans_cuda_naive
-	#kmeans_cuda_transpose
-	#kmeans_cuda_shared
+	kmeans_seq
+	kmeans_cuda_naive
+	kmeans_cuda_transpose
+	kmeans_cuda_shared
 	kmeans_cuda_all_gpu
     #kmeans_cuda_all_gpu_atomics
     #kmeans_cuda_all_gpu_delta_reduction

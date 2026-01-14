@@ -114,14 +114,14 @@ void update_centroids(int numCoords,
 {
   /* TODO: additional steps for calculating new centroids in GPU? */
   /* average the sum and replace old cluster centers with newClusters */
-  int tid = get_tid();
-  if (tid < numClusters * numCoords) {
-      int i = tid % numClusters;
-      int j = tid / numClusters;
+  int tid = get_tid(); /* Global thread index */
+  for (int i = tid; i < numClusters; i += blockDim.x * gridDim.x) {
+    for (int j = 0; j < numCoords; j++) {
       if (devicenewClusterSize[i] > 0)
-          deviceClusters[j * numClusters + i] = devicenewClusters[j * numClusters + i] / devicenewClusterSize[i];
-      devicenewClusters[j * numClusters + i] = 0.0;
-      if (j == 0) devicenewClusterSize[i] = 0;
+        deviceClusters[j * numClusters + i] = devicenewClusters[j * numClusters + i] / devicenewClusterSize[i];
+      devicenewClusters[j * numClusters + i] = 0.0;   /* set back to 0 */
+    }
+    devicenewClusterSize[i] = 0;   /* set back to 0 */
   }
 }
 
@@ -250,8 +250,8 @@ void kmeans_gpu(double *objects,      /* in: [numObjs][numCoords] */
     checkCuda(cudaMemcpy(&delta, dev_delta_ptr, sizeof(double), cudaMemcpyDeviceToHost));
     transfers_time += wtime() - timing_transfers;
 
-    const unsigned int update_centroids_block_sz = (numClusters * numCoords > blockSize) ? blockSize : numClusters * numCoords;  /* TODO: can use different blocksize here if deemed better */
-    const unsigned int update_centroids_dim_sz = (numClusters * numCoords + update_centroids_block_sz - 1) / update_centroids_block_sz; /* TODO: calculate dim for "update_centroids" */
+    const unsigned int update_centroids_block_sz = (numClusters > blockSize) ? blockSize : numClusters;  /* TODO: can use different blocksize here if deemed better */
+    const unsigned int update_centroids_dim_sz = (numClusters + update_centroids_block_sz - 1) / update_centroids_block_sz; /* TODO: calculate dim for "update_centroids" */
     timing_gpu = wtime();
     /* TODO: use dim for "update_centroids" and fire it */
      	update_centroids<<< update_centroids_dim_sz, update_centroids_block_sz, 0 >>>
