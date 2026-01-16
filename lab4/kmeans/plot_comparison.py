@@ -174,6 +174,56 @@ def generate_comparison_plot(openmp_config, openmp_results, mpi_config, mpi_resu
     
     plt.close()
     
+    # --- Create Execution Time Comparison Plot ---
+    fig2, ax2 = plt.subplots(figsize=(12, 7))
+    
+    title2 = f"K-Means Execution Time Comparison: OpenMP vs MPI\n({openmp_config['numObjs']} objects, {openmp_config['numCoords']} coords, {openmp_config['numClusters']} clusters, {openmp_config['dataset_size']} MB)"
+    fig2.suptitle(title2, fontsize=14, fontweight='bold')
+    
+    # Create arrays for execution times
+    openmp_time_array = []
+    mpi_time_array = []
+    
+    for workers in all_workers:
+        openmp_idx = next((i for i, r in enumerate(openmp_results) if r['num_threads'] == workers), None)
+        mpi_idx = next((i for i, r in enumerate(mpi_results) if r['num_tasks'] == workers), None)
+        
+        openmp_time_array.append(openmp_times[openmp_idx] if openmp_idx is not None else 0)
+        mpi_time_array.append(mpi_times[mpi_idx] if mpi_idx is not None else 0)
+    
+    # Plot grouped bars
+    bars1_time = ax2.bar(x_pos - width/2, openmp_time_array, width, 
+                         color='#E74C3C', edgecolor='#A93226', linewidth=1.5, label='OpenMP')
+    bars2_time = ax2.bar(x_pos + width/2, mpi_time_array, width,
+                         color='#3498DB', edgecolor='#1F618D', linewidth=1.5, label='MPI')
+    
+    ax2.set_xlabel('Number of Workers (Threads/Tasks)', fontweight='bold', fontsize=12)
+    ax2.set_ylabel('Execution Time (seconds)', fontweight='bold', fontsize=12)
+    ax2.set_xticks(x_pos)
+    ax2.set_xticklabels([str(w) for w in all_workers])
+    ax2.grid(True, axis='y', linestyle='--', alpha=0.4)
+    ax2.legend(fontsize=11, loc='upper right')
+    
+    # Annotate bars with time values
+    for bar, time_val in zip(bars1_time, openmp_time_array):
+        if time_val > 0:
+            ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(openmp_time_array + mpi_time_array)*0.02,
+                    f'{time_val:.4f}s', ha='center', va='bottom', fontsize=9, color='#A93226', fontweight='bold')
+    
+    for bar, time_val in zip(bars2_time, mpi_time_array):
+        if time_val > 0:
+            ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + max(openmp_time_array + mpi_time_array)*0.02,
+                    f'{time_val:.4f}s', ha='center', va='bottom', fontsize=9, color='#1F618D', fontweight='bold')
+    
+    plt.tight_layout()
+    
+    # Save execution time plot
+    filename2 = os.path.join(output_dir, 'kmeans_execution_time_comparison.svg')
+    plt.savefig(filename2, dpi=300, bbox_inches='tight')
+    print(f"Saved execution time comparison plot to {filename2}")
+    
+    plt.close()
+    
     # --- Print Summary Statistics ---
     print("\n" + "="*80)
     print("PERFORMANCE COMPARISON SUMMARY")
