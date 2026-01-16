@@ -106,8 +106,8 @@ void kmeans(double * objects,         /* in: [numObjs][numCoords] */
         /*
          * TODO: Perform reduction of cluster data (rank_newClusters, rank_newClusterSize) from local arrays to shared.
          */
-        MPI_Reduce(rank_newClusterSize, newClusterSize, numClusters, MPI_INT, MPI_SUM, 0, MPI_COMM_WORLD);
-        MPI_Reduce(rank_newClusters, newClusters, numClusters * numCoords, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+        MPI_Allreduce(rank_newClusterSize, newClusterSize, numClusters, MPI_INT, MPI_SUM, MPI_COMM_WORLD);
+        MPI_Allreduce(rank_newClusters, newClusters, numClusters * numCoords, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
         
         // average the sum and replace old cluster centers with newClusters
         for (i=0; i<numClusters; i++) {
@@ -122,7 +122,7 @@ void kmeans(double * objects,         /* in: [numObjs][numCoords] */
          * TODO: Perform reduction from rank_delta variable to delta variable, that will be used for convergence check.
          */
 
-        MPI_Reduce(&rank_delta, &delta, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
+        MPI_Allreduce(&rank_delta, &delta, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
 
         // Get fraction of objects whose membership changed during this loop. This is used as a convergence criterion.
         delta /= numObjs;

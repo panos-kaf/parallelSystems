@@ -24,7 +24,7 @@ double * dataset_generation(int numObjs, int numCoords, long *rank_numObjs)
     /*
      * TODO: Calculate number of objects that each rank will examine (*rank_numObjs)
      */
-    *rank_numObjs = rank == size - 1 ? numObjs : numObjs/size;
+    *rank_numObjs = (rank == size - 1) ? (numObjs - (size - 1) * (numObjs / size)) : (numObjs / size);
 
 
 

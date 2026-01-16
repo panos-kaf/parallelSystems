@@ -1,0 +1,21 @@
+Num MPI Tasks: 1
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total = 27.6220s)  (per loop =  2.7622s)
+Num MPI Tasks: 2
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total = 13.7694s)  (per loop =  1.3769s)
+Num MPI Tasks: 4
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total =  6.9053s)  (per loop =  0.6905s)
+Num MPI Tasks: 8
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total =  3.4594s)  (per loop =  0.3459s)
+Num MPI Tasks: 16
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total =  1.7423s)  (per loop =  0.1742s)
+Num MPI Tasks: 32
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total =  0.8847s)  (per loop =  0.0885s)
+Num MPI Tasks: 64
+dataset_size = 256.00 MB    numObjs = 2097152    numCoords = 16    numClusters = 32
+        nloops =  10   (total =  0.4602s)  (per loop =  0.0460s)
