@@ -115,6 +115,7 @@ int main(int argc, char **argv)
      * TODO: Broadcast initial cluster positions to all ranks
      */
 
+    MPI_Bcast(clusters, numClusters * numCoords, MPI_DOUBLE, 0, MPI_COMM_WORLD);
 
     // membership: the cluster id for each data object
     membership = (int*) malloc(rank_numObjs * sizeof(int));
@@ -122,9 +123,9 @@ int main(int argc, char **argv)
 
     // start the core computation
     /* 
-     * TODO: Fix number of objects that this kmeans function call will process
+     * TODO: Fix number of objects that this kmeans function call will process (numObjs/size)
      */
-    kmeans(objects, numCoords, numObjs, numClusters, threshold, loop_threshold, membership, clusters);
+    kmeans(objects, numCoords, rank_numObjs, numClusters, threshold, loop_threshold, membership, clusters);
 
     /*
     if (rank == 0) {    
@@ -145,24 +146,28 @@ int main(int argc, char **argv)
          * Hint: recvcounts: number of elements received from each rank
          *       displs: displacement of each rank's data 
          */
-
-
-
-
-
-
-
+        int to_recv = 0;
+        for(i = 0; i < size-1; i++){
+            recvcounts[i] = (numObjs/size);
+            displs[i] = to_recv;
+            to_recv += recvcounts[i];
+        }
+        recvcounts[size-1] = numObjs - (size-1)*(numObjs/size);
+        displs[size-1] = to_recv;
     }
 
     /* 
      * TODO: Broadcast the recvcounts and displs arrays to other ranks.
      */
-
-
+    MPI_Bcast(recvcounts, size, MPI_INT, 0, MPI_COMM_WORLD);
+    MPI_Bcast(displs, size, MPI_INT, 0, MPI_COMM_WORLD);
 
     /*
      * TODO: Gather membership information from every rank. (hint: each rank may send different number of objects)
      */
+    MPI_Gatherv(membership, rank_numObjs, MPI_INT,
+                tot_membership, recvcounts, displs, MPI_INT, 0, MPI_COMM_WORLD
+                );
 
 
     if (_debug && rank == 0)
