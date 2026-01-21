@@ -236,27 +236,26 @@ int main(int argc, char ** argv) {
         swap = u_previous;
         u_previous = u_current;
         u_current = swap;
-	
+        
+        MPI_Request requests[8];
+        int req_count = 0;
 
         //Exchange ghost rows
-        MPI_Sendrecv(&u_previous[1][1], 1, row_type, north, 0,
-                     &u_previous[local[0]+1][1], 1, row_type, south, 0,
-                     CART_COMM, MPI_STATUS_IGNORE);
+        MPI_Isend(&u_previous[1][1], 1, row_type, north, 0, CART_COMM, &requests[req_count++]);
+        MPI_Irecv(&u_previous[local[0]+1][1], 1, row_type, south, 0, CART_COMM, &requests[req_count++]);
 
-        MPI_Sendrecv(&u_previous[local[0]][1], 1, row_type, south, 0,
-                     &u_previous[0][1], 1, row_type, north, 0,
-                     CART_COMM, MPI_STATUS_IGNORE);
+        MPI_Isend(&u_previous[local[0]][1], 1, row_type, south, 1, CART_COMM, &requests[req_count++]);
+        MPI_Irecv(&u_previous[0][1], 1, row_type, north, 1, CART_COMM, &requests[req_count++]);
 
         //Exchange ghost columns
-        MPI_Sendrecv(&u_previous[1][1], 1, column_type, west, 0,
-                     &u_previous[1][local[1]+1], 1, column_type, east, 0,
-                     CART_COMM, MPI_STATUS_IGNORE);
+        MPI_Isend(&u_previous[1][1], 1, column_type, west, 2, CART_COMM, &requests[req_count++]);
+        MPI_Irecv(&u_previous[1][local[1]+1], 1, column_type, east, 2, CART_COMM, &requests[req_count++]);
 
-        MPI_Sendrecv(&u_previous[1][local[1]], 1, column_type, east, 0,
-                     &u_previous[1][0], 1, column_type, west, 0,
-                     CART_COMM, MPI_STATUS_IGNORE);
+        MPI_Isend(&u_previous[1][local[1]], 1, column_type, east, 3, CART_COMM, &requests[req_count++]);
+        MPI_Irecv(&u_previous[1][0], 1, column_type, west, 3, CART_COMM, &requests[req_count++]);
         
-        MPI_Barrier(CART_COMM); //Ensure all communications are complete before computation
+        MPI_Waitall(req_count, requests, MPI_STATUSES_IGNORE);
+
         gettimeofday(&tcs,NULL); //Start computation timer
         //Compute new values
         for (i = i_min; i <= i_max; i++) {

@@ -1,0 +1,5 @@
+
+Running Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.056888 CommunicationTime 143.618280 ConvergenceTime 0.909074 TotalTime 146.675168 midpoint 2.774119
+\nRunning async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.176104 CommunicationTime 37.091672 ConvergenceTime 1.251507 TotalTime 40.267776 midpoint 2.774119

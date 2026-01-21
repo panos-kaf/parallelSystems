@@ -1,0 +1,17 @@
+
+Running Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.056888 CommunicationTime 143.618280 ConvergenceTime 0.909074 TotalTime 146.675168 midpoint 2.774119
+\nRunning async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.176104 CommunicationTime 37.091672 ConvergenceTime 1.251507 TotalTime 40.267776 midpoint 2.774119
+
+Running Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.051355 CommunicationTime 142.780349 ConvergenceTime 0.916026 TotalTime 145.831704 midpoint 2.774119
+
+Running async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.190697 CommunicationTime 37.188066 ConvergenceTime 1.222028 TotalTime 40.378763 midpoint 2.774119
+
+Running Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.031682 CommunicationTime 143.289877 ConvergenceTime 0.891554 TotalTime 146.321559 midpoint 2.774119
+
+Running async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.186580 CommunicationTime 37.203635 ConvergenceTime 1.240125 TotalTime 40.390215 midpoint 2.774119

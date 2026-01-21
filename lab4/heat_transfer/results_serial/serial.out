@@ -1,0 +1,21 @@
+Sequental runtime for size 2048
+Jacobi
+Jacobi X 2048 Y 2048 Iter 255 Time 7.473074 midpoint 0.000000
+Gauss-Seidel SOR
+GaussSeidelSOR X 2048 Y 2048 Iter 255 Time 12.103721 midpoint 0.849018
+Red-Black SOR
+RedBlackSOR X 2048 Y 2048 Iter 255 Time 13.373343 midpoint 0.000000
+Sequental runtime for size 4096
+Jacobi
+Jacobi X 4096 Y 4096 Iter 255 Time 30.040299 midpoint 0.000000
+Gauss-Seidel SOR
+GaussSeidelSOR X 4096 Y 4096 Iter 255 Time 48.424332 midpoint 0.900935
+Red-Black SOR
+RedBlackSOR X 4096 Y 4096 Iter 255 Time 53.715483 midpoint 0.000000
+Sequental runtime for size 6144
+Jacobi
+Jacobi X 6144 Y 6144 Iter 255 Time 67.400566 midpoint 0.000000
+Gauss-Seidel SOR
+GaussSeidelSOR X 6144 Y 6144 Iter 255 Time 108.624133 midpoint 0.942706
+Red-Black SOR
+RedBlackSOR X 6144 Y 6144 Iter 255 Time 120.109687 midpoint 0.000000
