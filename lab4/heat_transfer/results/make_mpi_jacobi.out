@@ -1,6 +1,0 @@
-rm jacobi seidelsor redblacksor jacobi_conv seidelsor_conv redblacksor_conv
-Makefile:39: recipe for target 'clean' failed
-mpicc -O3 -lm -Wall  mpi_jacobi.c utils.c -o jacobi
-mpicc -O3 -lm -Wall  mpi_jacobi_async.c utils.c -o jacobi_async
-mpicc -O3 -lm -Wall  -DTEST_CONV mpi_jacobi.c utils.c -o jacobi_conv
-make: 'jacobi_async_conv' is up to date.

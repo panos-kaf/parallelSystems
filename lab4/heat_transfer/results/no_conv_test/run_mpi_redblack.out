@@ -1,0 +1,49 @@
+Num MPI Tasks: 1
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 1 Py 1 Iter 256 ComputationTime 18.587336 CommunicationTime 0.000928 ConvergenceTime 0.000000 TotalTime 18.588264 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 1 Py 1 Iter 256 ComputationTime 74.490323 CommunicationTime 0.001157 ConvergenceTime 0.000000 TotalTime 74.491480 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 1 Py 1 Iter 256 ComputationTime 167.593247 CommunicationTime 0.001250 ConvergenceTime 0.000000 TotalTime 167.594497 midpoint 0.000000
+Num MPI Tasks: 2
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 1 Py 2 Iter 256 ComputationTime 12.167132 CommunicationTime 0.065562 ConvergenceTime 0.000000 TotalTime 12.232694 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 1 Py 2 Iter 256 ComputationTime 48.644197 CommunicationTime 0.144099 ConvergenceTime 0.000000 TotalTime 48.788296 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 1 Py 2 Iter 256 ComputationTime 109.459067 CommunicationTime 0.253685 ConvergenceTime 0.000000 TotalTime 109.712752 midpoint 0.000000
+Num MPI Tasks: 4
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 2 Py 2 Iter 256 ComputationTime 8.609488 CommunicationTime 0.102847 ConvergenceTime 0.000000 TotalTime 8.712335 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 2 Py 2 Iter 256 ComputationTime 34.415749 CommunicationTime 0.259048 ConvergenceTime 0.000000 TotalTime 34.674797 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 2 Py 2 Iter 256 ComputationTime 77.455851 CommunicationTime 0.499925 ConvergenceTime 0.000000 TotalTime 77.955776 midpoint 0.000000
+Num MPI Tasks: 8
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 2 Py 4 Iter 256 ComputationTime 8.212559 CommunicationTime 0.300043 ConvergenceTime 0.000000 TotalTime 8.512602 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 2 Py 4 Iter 256 ComputationTime 34.274985 CommunicationTime 0.785800 ConvergenceTime 0.000000 TotalTime 35.060785 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 2 Py 4 Iter 256 ComputationTime 77.539502 CommunicationTime 0.964394 ConvergenceTime 0.000000 TotalTime 78.503896 midpoint 0.000000
+Num MPI Tasks: 16
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 4 Py 4 Iter 256 ComputationTime 3.562266 CommunicationTime 0.326039 ConvergenceTime 0.000000 TotalTime 3.888305 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 4 Py 4 Iter 256 ComputationTime 17.059643 CommunicationTime 0.989279 ConvergenceTime 0.000000 TotalTime 18.048922 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 4 Py 4 Iter 256 ComputationTime 38.690357 CommunicationTime 2.074561 ConvergenceTime 0.000000 TotalTime 40.764918 midpoint 0.000000
+Num MPI Tasks: 32
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 4 Py 8 Iter 256 ComputationTime 0.777717 CommunicationTime 0.404100 ConvergenceTime 0.000000 TotalTime 1.181817 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 4 Py 8 Iter 256 ComputationTime 8.671658 CommunicationTime 1.253754 ConvergenceTime 0.000000 TotalTime 9.925412 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 4 Py 8 Iter 256 ComputationTime 20.587212 CommunicationTime 2.446048 ConvergenceTime 0.000000 TotalTime 23.033260 midpoint 0.000000
+Num MPI Tasks: 64
+Table Size: 2048x2048
+Red-Black-SOR X 2048 Y 2048 Px 8 Py 8 Iter 256 ComputationTime 0.122500 CommunicationTime 0.390823 ConvergenceTime 0.000000 TotalTime 0.513323 midpoint 0.000000
+Table Size: 4096x4096
+Red-Black-SOR X 4096 Y 4096 Px 8 Py 8 Iter 256 ComputationTime 4.330328 CommunicationTime 1.289025 ConvergenceTime 0.000000 TotalTime 5.619353 midpoint 0.000000
+Table Size: 6144x6144
+Red-Black-SOR X 6144 Y 6144 Px 8 Py 8 Iter 256 ComputationTime 11.069277 CommunicationTime 2.612209 ConvergenceTime 0.000000 TotalTime 13.681486 midpoint 0.000000

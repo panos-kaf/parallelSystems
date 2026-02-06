@@ -1,0 +1,49 @@
+Num MPI Tasks: 1
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 1 Py 1 Iter 256 ComputationTime 8.415818 CommunicationTime 0.000738 ConvergenceTime 0.000000 TotalTime 8.416556 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 1 Py 1 Iter 256 ComputationTime 33.633469 CommunicationTime 0.001072 ConvergenceTime 0.000000 TotalTime 33.634541 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 1 Py 1 Iter 256 ComputationTime 75.705465 CommunicationTime 0.001107 ConvergenceTime 0.000000 TotalTime 75.706572 midpoint 0.000000
+Num MPI Tasks: 2
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 1 Py 2 Iter 256 ComputationTime 6.030374 CommunicationTime 0.073222 ConvergenceTime 0.000000 TotalTime 6.103596 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 1 Py 2 Iter 256 ComputationTime 24.107308 CommunicationTime 0.152514 ConvergenceTime 0.000000 TotalTime 24.259822 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 1 Py 2 Iter 256 ComputationTime 54.208402 CommunicationTime 0.277179 ConvergenceTime 0.000000 TotalTime 54.485581 midpoint 0.000000
+Num MPI Tasks: 4
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 2 Py 2 Iter 256 ComputationTime 4.305443 CommunicationTime 0.101402 ConvergenceTime 0.000000 TotalTime 4.406845 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 2 Py 2 Iter 256 ComputationTime 17.234150 CommunicationTime 0.243527 ConvergenceTime 0.000000 TotalTime 17.477677 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 2 Py 2 Iter 256 ComputationTime 38.730214 CommunicationTime 0.494374 ConvergenceTime 0.000000 TotalTime 39.224588 midpoint 0.000000
+Num MPI Tasks: 8
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 2 Py 4 Iter 256 ComputationTime 4.152480 CommunicationTime 0.290761 ConvergenceTime 0.000000 TotalTime 4.443241 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 2 Py 4 Iter 256 ComputationTime 17.205026 CommunicationTime 0.540175 ConvergenceTime 0.000000 TotalTime 17.745201 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 2 Py 4 Iter 256 ComputationTime 38.673108 CommunicationTime 1.018137 ConvergenceTime 0.000000 TotalTime 39.691245 midpoint 0.000000
+Num MPI Tasks: 16
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 4 Py 4 Iter 256 ComputationTime 1.857448 CommunicationTime 0.335990 ConvergenceTime 0.000000 TotalTime 2.193438 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 4 Py 4 Iter 256 ComputationTime 8.518801 CommunicationTime 0.955329 ConvergenceTime 0.000000 TotalTime 9.474130 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 4 Py 4 Iter 256 ComputationTime 19.378356 CommunicationTime 1.886082 ConvergenceTime 0.000000 TotalTime 21.264438 midpoint 0.000000
+Num MPI Tasks: 32
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 4 Py 8 Iter 256 ComputationTime 0.414727 CommunicationTime 0.390462 ConvergenceTime 0.000000 TotalTime 0.805189 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 4 Py 8 Iter 256 ComputationTime 4.517699 CommunicationTime 1.201999 ConvergenceTime 0.000000 TotalTime 5.719698 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 4 Py 8 Iter 256 ComputationTime 10.326440 CommunicationTime 2.447082 ConvergenceTime 0.000000 TotalTime 12.773522 midpoint 0.000000
+Num MPI Tasks: 64
+Table Size: 2048x2048
+Jacobi X 2048 Y 2048 Px 8 Py 8 Iter 256 ComputationTime 0.054368 CommunicationTime 0.383309 ConvergenceTime 0.000000 TotalTime 0.437677 midpoint 0.000000
+Table Size: 4096x4096
+Jacobi X 4096 Y 4096 Px 8 Py 8 Iter 256 ComputationTime 2.350102 CommunicationTime 1.265107 ConvergenceTime 0.000000 TotalTime 3.615209 midpoint 0.000000
+Table Size: 6144x6144
+Jacobi X 6144 Y 6144 Px 8 Py 8 Iter 256 ComputationTime 5.591246 CommunicationTime 2.710338 ConvergenceTime 0.000000 TotalTime 8.301584 midpoint 0.000000

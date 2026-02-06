@@ -1,0 +1,9 @@
+
+Running async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.182289 CommunicationTime 36.326371 ConvergenceTime 1.203806 TotalTime 39.508660 midpoint 2.774119
+
+Running async Gauss-Seidel conv test
+Gauss-Seidel X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.061615 CommunicationTime 0.220625 ConvergenceTime 0.049194 TotalTime 0.282240 midpoint 0.000000
+
+Running async Red-Black SOR conv test
+Red-Black SOR X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.043509 CommunicationTime 0.230802 ConvergenceTime 0.040033 TotalTime 0.274311 midpoint 0.000000

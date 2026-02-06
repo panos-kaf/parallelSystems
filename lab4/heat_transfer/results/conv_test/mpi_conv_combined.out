@@ -1,0 +1,27 @@
+
+Running async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.197691 CommunicationTime 36.566698 ConvergenceTime 1.202483 TotalTime 39.764389 midpoint 2.774119
+
+Running async Gauss-Seidel conv test
+Gauss-Seidel X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.071886 CommunicationTime 0.222684 ConvergenceTime 0.040486 TotalTime 0.294570 midpoint 0.000000
+
+Running async Red-Black SOR conv test
+Red-Black SOR X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.042824 CommunicationTime 0.224455 ConvergenceTime 0.038618 TotalTime 0.267279 midpoint 0.000000
+
+Running async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.182289 CommunicationTime 36.326371 ConvergenceTime 1.203806 TotalTime 39.508660 midpoint 2.774119
+
+Running async Gauss-Seidel conv test
+Gauss-Seidel X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.061615 CommunicationTime 0.220625 ConvergenceTime 0.049194 TotalTime 0.282240 midpoint 0.000000
+
+Running async Red-Black SOR conv test
+Red-Black SOR X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.043509 CommunicationTime 0.230802 ConvergenceTime 0.040033 TotalTime 0.274311 midpoint 0.000000
+
+Running async Jacobi conv test
+Jacobi X 512 Y 512 Px 8 Py 8 Iter 236001 ComputationTime 3.183244 CommunicationTime 36.514940 ConvergenceTime 1.208851 TotalTime 39.698184 midpoint 2.774119
+
+Running async Gauss-Seidel conv test
+Gauss-Seidel X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.065777 CommunicationTime 0.214868 ConvergenceTime 0.040224 TotalTime 0.280645 midpoint 0.000000
+
+Running async Red-Black SOR conv test
+Red-Black SOR X 512 Y 512 Px 8 Py 8 Iter 1301 ComputationTime 0.040424 CommunicationTime 0.227389 ConvergenceTime 0.037480 TotalTime 0.267813 midpoint 0.000000

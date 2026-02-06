@@ -1,0 +1,49 @@
+Num MPI Tasks: 1
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 1 Py 1 Iter 256 ComputationTime 12.104181 CommunicationTime 0.000927 ConvergenceTime 0.000000 TotalTime 12.105108 midpoint 0.849018
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 1 Py 1 Iter 256 ComputationTime 48.449478 CommunicationTime 0.001199 ConvergenceTime 0.000000 TotalTime 48.450677 midpoint 0.900935
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 1 Py 1 Iter 256 ComputationTime 109.027304 CommunicationTime 0.001206 ConvergenceTime 0.000000 TotalTime 109.028510 midpoint 0.942706
+Num MPI Tasks: 2
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 1 Py 2 Iter 256 ComputationTime 6.974143 CommunicationTime 0.109436 ConvergenceTime 0.000000 TotalTime 7.083579 midpoint 0.000057
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 1 Py 2 Iter 256 ComputationTime 34.602798 CommunicationTime 0.227937 ConvergenceTime 0.000000 TotalTime 34.830735 midpoint 0.000000
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 1 Py 2 Iter 256 ComputationTime 81.541365 CommunicationTime 0.350638 ConvergenceTime 0.000000 TotalTime 81.892003 midpoint 0.000000
+Num MPI Tasks: 4
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 2 Py 2 Iter 256 ComputationTime 4.277612 CommunicationTime 0.131245 ConvergenceTime 0.000000 TotalTime 4.408857 midpoint 0.000000
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 2 Py 2 Iter 256 ComputationTime 17.509657 CommunicationTime 0.309186 ConvergenceTime 0.000000 TotalTime 17.818843 midpoint 0.000000
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 2 Py 2 Iter 256 ComputationTime 40.844352 CommunicationTime 0.557118 ConvergenceTime 0.000000 TotalTime 41.401470 midpoint 0.000000
+Num MPI Tasks: 8
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 2 Py 4 Iter 256 ComputationTime 4.183702 CommunicationTime 0.260667 ConvergenceTime 0.000000 TotalTime 4.444369 midpoint 0.000000
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 2 Py 4 Iter 256 ComputationTime 17.059494 CommunicationTime 0.770615 ConvergenceTime 0.000000 TotalTime 17.830109 midpoint 0.000000
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 2 Py 4 Iter 256 ComputationTime 38.741692 CommunicationTime 1.328122 ConvergenceTime 0.000000 TotalTime 40.069814 midpoint 0.000000
+Num MPI Tasks: 16
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 4 Py 4 Iter 256 ComputationTime 1.873048 CommunicationTime 0.319221 ConvergenceTime 0.000000 TotalTime 2.192269 midpoint 0.000000
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 4 Py 4 Iter 256 ComputationTime 8.451384 CommunicationTime 1.038504 ConvergenceTime 0.000000 TotalTime 9.489888 midpoint 0.000000
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 4 Py 4 Iter 256 ComputationTime 19.186461 CommunicationTime 2.068615 ConvergenceTime 0.000000 TotalTime 21.255076 midpoint 0.000000
+Num MPI Tasks: 32
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 4 Py 8 Iter 256 ComputationTime 0.505755 CommunicationTime 0.346152 ConvergenceTime 0.000000 TotalTime 0.851907 midpoint 0.000000
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 4 Py 8 Iter 256 ComputationTime 4.454217 CommunicationTime 1.268847 ConvergenceTime 0.000000 TotalTime 5.723064 midpoint 0.000000
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 4 Py 8 Iter 256 ComputationTime 10.302638 CommunicationTime 2.502086 ConvergenceTime 0.000000 TotalTime 12.804724 midpoint 0.000000
+Num MPI Tasks: 64
+Table Size: 2048x2048
+Gauss-Seidel-SOR X 2048 Y 2048 Px 8 Py 8 Iter 256 ComputationTime 0.200616 CommunicationTime 0.390960 ConvergenceTime 0.000000 TotalTime 0.591576 midpoint 0.000000
+Table Size: 4096x4096
+Gauss-Seidel-SOR X 4096 Y 4096 Px 8 Py 8 Iter 256 ComputationTime 2.244694 CommunicationTime 1.306389 ConvergenceTime 0.000000 TotalTime 3.551083 midpoint 0.000000
+Table Size: 6144x6144
+Gauss-Seidel-SOR X 6144 Y 6144 Px 8 Py 8 Iter 256 ComputationTime 5.525287 CommunicationTime 2.680498 ConvergenceTime 0.000000 TotalTime 8.205785 midpoint 0.000000
