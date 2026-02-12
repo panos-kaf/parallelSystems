@@ -39,68 +39,50 @@ int main(int argc, char **argv)
 
 	for(k=0;k<N;k+=B){
 #pragma omp parallel
-    {
-    #pragma omp single
         {
-            #pragma omp task
-                FW(A,k,k,k,B);
-            #pragma omp taskwait
-                
-            #pragma omp task if (0)
+#pragma omp single
             {
+                #pragma omp task
+                    FW(A,k,k,k,B);
+                #pragma omp taskwait
+
                 #pragma omp task private(i)
-                {
                     for(i=0; i<k; i+=B)
                         FW(A,k,i,k,B);
-                }
+
                 #pragma omp task private(i)
-                {
                     for(i=k+B; i<N; i+=B)
                         FW(A,k,i,k,B);
-                }      
+                #pragma omp taskwait
+
                 #pragma omp task private(j)
-                {
                     for(j=0; j<k; j+=B)
                         FW(A,k,k,j,B);
-                }
 
                 #pragma omp task private(j)
-                {
-                for(j=k+B; j<N; j+=B)
-                    FW(A,k,k,j,B);
-                }
-            }
-            #pragma omp taskwait
+                    for(j=k+B; j<N; j+=B)
+                        FW(A,k,k,j,B);
+                #pragma omp taskwait
 
-            #pragma omp task if (0)
-            {
-                #pragma omp task private(i, j)
-                {
+                #pragma omp task private(i,j)
                     for(i=0; i<k; i+=B)
                         for(j=0; j<k; j+=B)
                             FW(A,k,i,j,B);
-                }
 
-                #pragma omp task private(i, j)
-                {
+                #pragma omp task private(i,j)
                     for(i=0; i<k; i+=B)
                         for(j=k+B; j<N; j+=B)
                             FW(A,k,i,j,B);
-                }
 
-                #pragma omp task private(i, j)
-                {
+                #pragma omp task private(i,j)
                     for(i=k+B; i<N; i+=B)
                         for(j=0; j<k; j+=B)
                             FW(A,k,i,j,B);
-                }
-                #pragma omp task private(i, j)
-                {
+
+                #pragma omp task private(i,j)
                     for(i=k+B; i<N; i+=B)
                         for(j=k+B; j<N; j+=B)
                             FW(A,k,i,j,B);
-                }
-                }
             }
         }
     }
@@ -109,10 +91,11 @@ int main(int argc, char **argv)
 	time=(double)((t2.tv_sec-t1.tv_sec)*1000000+t2.tv_usec-t1.tv_usec)/1000000;
 	printf("FW_TILED, N = %d, B = %d, Time: %.4f\n", N,B,time);
 
-    /*
+	
 	for(i=0; i<N; i++)
 		for(j=0; j<N; j++) fprintf(stdout,"%d\n", A[i][j]);
-	*/
+	
+	
 	return 0;
 }
 
